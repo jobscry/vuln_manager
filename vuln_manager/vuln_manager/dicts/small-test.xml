@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<cpe-list xmlns:meta="http://scap.nist.gov/schema/cpe-dictionary-metadata/0.2" xmlns:config="http://scap.nist.gov/schema/configuration/0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe-23="http://scap.nist.gov/schema/cpe-extension/2.3" xmlns:scap-core="http://scap.nist.gov/schema/scap-core/0.3" xmlns:ns6="http://scap.nist.gov/schema/scap-core/0.1" xmlns="http://cpe.mitre.org/dictionary/2.0" xsi:schemaLocation="http://scap.nist.gov/schema/configuration/0.1 http://nvd.nist.gov/schema/configuration_0.1.xsd http://cpe.mitre.org/dictionary/2.0 http://scap.nist.gov/schema/cpe/2.3/cpe-dictionary_2.3.xsd http://scap.nist.gov/schema/scap-core/0.3 http://nvd.nist.gov/schema/scap-core_0.3.xsd http://scap.nist.gov/schema/scap-core/0.1 http://nvd.nist.gov/schema/scap-core_0.1.xsd http://scap.nist.gov/schema/cpe-dictionary-metadata/0.2 http://nvd.nist.gov/schema/cpe-dictionary-metadata_0.2.xsd http://scap.nist.gov/schema/cpe-extension/2.3 http://scap.nist.gov/schema/cpe/2.3/cpe-dictionary-extension_2.3.xsd">
+  <generator>
+    <product_name>National Vulnerability Database (NVD)</product_name>
+    <product_version>2.25</product_version>
+    <schema_version>2.3</schema_version>
+    <timestamp>2015-03-13T03:50:00.313Z</timestamp>
+  </generator>
+  <cpe-item name="cpe:/h:zyxel:p-660hw:_t1:v3">
+    <title xml:lang="en-US">ZyXEL P-660HW T1 V3</title>
+    <references>
+      <reference href="http://www.zyxel.com/tr/tr/products_services/p_660hw_series.shtml?t=p">vendor product information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:h:zyxel:p-660hw:_t1:v3:*:*:*:*:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/h:zyxel:p-660hw_d1:-">
+    <title xml:lang="en-US">ZyXEL P-660HW D1 Model (initial release)</title>
+    <cpe-23:cpe23-item name="cpe:2.3:h:zyxel:p-660hw_d1:-:*:*:*:*:*:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/h:zyxel:p-660hw_d1:v2">
+    <title xml:lang="en-US">ZyXEL P-660HW D1 Model v2</title>
+    <cpe-23:cpe23-item name="cpe:2.3:h:zyxel:p-660hw_d1:v2:*:*:*:*:*:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/h:zyxel:p-660hw_d3:-">
+    <title xml:lang="en-US">ZyXEL P-660HW D3 Model (initial release)</title>
+    <cpe-23:cpe23-item name="cpe:2.3:h:zyxel:p-660hw_d3:-:*:*:*:*:*:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/h:zyxel:p-660hw_t3:-">
+    <title xml:lang="en-US">ZyXEL P-660HW T3 Model (initial release)</title>
+    <cpe-23:cpe23-item name="cpe:2.3:h:zyxel:p-660hw_t3:-:*:*:*:*:*:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/h:zyxel:p-660hw_t3:v2">
+    <title xml:lang="en-US">ZyXEL P-660HW T3 Model v2</title>
+    <cpe-23:cpe23-item name="cpe:2.3:h:zyxel:p-660hw_t3:v2:*:*:*:*:*:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:3com:tippingpoint_ips_tos:2.2.1" deprecated="true" deprecation_date="2010-12-28T17:36:01.163Z">
+    <title xml:lang="en-US">3Com TippingPoint IPS TOS 2.2.1</title>
+    <cpe-23:cpe23-item name="cpe:2.3:a:3com:tippingpoint_ips_tos:2.2.1:*:*:*:*:*:*:*">
+      <cpe-23:deprecation date="2010-12-28T12:36:01.163-05:00">
+        <cpe-23:deprecated-by name="cpe:2.3:o:3com:tippingpoint_ips_tos:2.2.1:*:*:*:*:*:*:*" type="NAME_CORRECTION"/>
+      </cpe-23:deprecation>
+    </cpe-23:cpe23-item>
+  </cpe-item>
+</cpe-list>
