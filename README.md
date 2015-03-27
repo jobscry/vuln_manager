@@ -9,6 +9,8 @@ The goal of this project is to create custom vulnerability feeds from the Nation
 
 ## Requirements
 
-* Django 1.7.7
+* Django 1.8+
 * lxml 3.4.2
 * Requests 2.6.0
+* psycopg2 2.5.4
+* Postgresql
