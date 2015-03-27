@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Item, Reference, Dictionary, cpe23_wfn_to_dict
+from .models import Item, Dictionary, cpe23_wfn_to_dict
 
 
 class ItemAdmin(admin.ModelAdmin):
@@ -13,15 +13,9 @@ class ItemAdmin(admin.ModelAdmin):
 admin.site.register(Item, ItemAdmin)
 
 
-class ReferenceAdmin(admin.ModelAdmin):
-    list_display = ['value', 'url']
-
-admin.site.register(Reference, ReferenceAdmin)
-
-
 class DictionaryAdmin(admin.ModelAdmin):
     list_display = (
-        'schema_version', 
+        'schema_version',
         'product_version',
         'generated',
         'num_items',

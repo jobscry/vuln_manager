@@ -3,8 +3,9 @@ from django.conf import settings
 from django.utils.timezone import now
 from django.utils.dateparse import parse_datetime
 from cpes.models import (
-    Item, Reference, Dictionary, cpe23_wfn_to_dict,
+    Item, Dictionary, cpe23_wfn_to_dict,
 )
+from .utils import CPEUpdater, fast_iter
 
 from os.path import join, normpath, isfile
 from lxml import etree
@@ -17,76 +18,6 @@ NAMESPACE_DICT = {
     'c': 'http://www.w3.org/XML/1998/namespace'
 }
 
-MAX_ITEMS = 10000
-
-
-class CPEUpdater(object):
-    def __init__(self, update):
-        self.references = {}
-        self.items = {}
-        self.total_count = 0
-        self.count = 0
-        self.count_refs = 0
-        self.count_deprecated = 0
-        self.count_existing = 0
-        self.update = update
-        self.through_model = Item.references.through
-
-    def add_item(self, item):
-        self.items[self.count] = item
-
-    def add_references(self, ref):
-        self.references[self.count] = ref
-
-    def increment_count(self):
-        self.count += 1
-        self.total_count += 1
-        if self.count >= MAX_ITEMS:
-            self.save_cpes()
-            self.save_references()
-            self.items = {}
-            self.references = {}
-            self.count = 0
-
-    def save_cpes(self):
-        Item.objects.bulk_create(self.items.values())
-
-    def save_references(self):
-        for x in self.references.keys():
-            pks = []
-            bulk_references = []
-            item = Item.objects.get(cpe23_wfn=self.items[x].cpe23_wfn)
-            for ref in self.references[x]:
-                ref.save()
-                bulk_references.append((item.pk, ref.pk))
-                self.count_refs += 1
-            self.through_model.objects.bulk_create(
-                [self.through_model(item_id=ref[0], reference_id=ref[1]) for ref in bulk_references]
-            )
-
-def get_references(references, cpe_updater):
-    if len(references) > 0:
-        refs = []
-        for ref in references:
-            refs.append(
-                Reference(
-                    value=ref.text,
-                    url=ref.get('href'),
-                    dictionary=cpe_updater.update
-                )
-            )
-        cpe_updater.add_references(refs)
-
-
-def fast_iter(context, func, cpe_updater):
-    # http://www.ibm.com/developerworks/xml/library/x-hiperfparse/
-    # Author: Liza Daly
-    for event, elem in context:
-        parse_cpes(elem, cpe_updater)
-        elem.clear()
-        while elem.getprevious() is not None:
-            del elem.getparent()[0]
-    del context
 
 
 def parse_cpes(element, cpe_updater):
@@ -135,13 +66,11 @@ def parse_cpes(element, cpe_updater):
                 'b:deprecated-by/@type', namespaces=NAMESPACE_DICT)[0]
             cpe_updater.count_deprecated += 1
 
-        references = get_references(
-            element.xpath('a:references/a:reference', namespaces=NAMESPACE_DICT),
-            cpe_updater
-        )
+        cpe.references = element.xpath('a:references/a:reference/@href', namespaces=NAMESPACE_DICT)
 
         cpe_updater.add_item(cpe)
         cpe_updater.increment_count()
+        cpe_updater.count_refs += len(cpe.references)
 
 
 class Command(BaseCommand):
@@ -179,7 +108,6 @@ class Command(BaseCommand):
         fast_iter(context, parse_cpes, cpe_updater)
 
         cpe_updater.save_cpes()
-        cpe_updater.save_references()
 
         update.num_items = cpe_updater.total_count
         update.num_deprecated = cpe_updater.count_deprecated

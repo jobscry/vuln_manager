@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 
 APPLICATIONS = 'a'
@@ -23,6 +24,9 @@ WFN_KEYS = [
 
 
 class Dictionary(models.Model):
+    """
+    Dictionary model to track updates to the database.
+    """
     title = models.CharField(max_length=255)
     schema_version = models.DecimalField(max_digits=4, decimal_places=2)
     product_version = models.DecimalField(max_digits=4, decimal_places=2)
@@ -44,17 +48,14 @@ class Dictionary(models.Model):
         verbose_name_plural = 'dictionaries'
 
 
-class Reference(models.Model):
-    value = models.CharField(max_length=255)
-    url = models.URLField(max_length=2000)
-    dictionary = models.ForeignKey(Dictionary)
-
-
 def cpe23_wfn_to_dict(wfn):
     return dict(zip(WFN_KEYS, wfn.split(':')[2:]))
 
 
 class Item(models.Model):
+    """
+    CPE Item model.
+    """
     PART_CHOICES = (
         (APPLICATIONS, 'Applications'),
         (OPERATING_SYSTEMS, 'Operating Systems'),
@@ -65,14 +66,20 @@ class Item(models.Model):
         (NAME_REMOVAL, 'Removal'),
         (ADDITIONAL_INFORMATION, 'Additional Information')
     )
-    cpe22_wfn = models.CharField(max_length=255, unique=True, null=True, blank=True)
+    cpe22_wfn = models.CharField(
+        max_length=255, unique=True, null=True, blank=True)
     cpe23_wfn = models.CharField(max_length=255, unique=True)
     title = models.CharField(max_length=255)
-    references = models.ManyToManyField(Reference)
+    references = ArrayField(
+        models.URLField(max_length=2000), blank=True, null=True
+    )
     deprecated = models.BooleanField(default=False)
     deprecation_date = models.DateTimeField(blank=True, null=True)
     deprecation_type = models.CharField(
-        max_length=25, choices=DEPRECATION_TYPE_CHOICES, default=NAME_CORRECTION)
+        max_length=25,
+        choices=DEPRECATION_TYPE_CHOICES,
+        default=NAME_CORRECTION
+    )
     deprecated_by = models.CharField(max_length=255, blank=True, null=True)
     part = models.CharField(
         max_length=1,
@@ -91,5 +98,3 @@ class Item(models.Model):
     target_hw = models.CharField(max_length=255, blank=True, null=True)
     other = models.CharField(max_length=255, blank=True, null=True)
     dictionary = models.ForeignKey(Dictionary)
-
-
