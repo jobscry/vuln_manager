@@ -41,4 +41,1073 @@
       </cpe-23:deprecation>
     </cpe-23:cpe23-item>
   </cpe-item>
+  <cpe-item name="cpe:/a:webmin:usermin:0.960">
+    <title xml:lang="en-US">Webmin Usermin 0.960</title>
+    <references>
+      <reference href="http://www.webmin.com/uchanges.html">vendor product changelog</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:webmin:usermin:0.960:*:*:*:*:*:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
+  <cpe-item name="cpe:/a:7andi-fs.co:denny%27s:1.0.1::~~~android~~">
+    <title xml:lang="en-US">Seven &amp; i Food Systems co.,Ltd. Denny's application for Android 1.0.1</title>
+    <references>
+      <reference href="http://denimoba.jp/sp/">product information</reference>
+      <reference href="http://www.7andi-fs.co.jp">highest level vendor DNS name</reference>
+      <reference href="https://play.google.com/store/apps/details?id=jp.denimoba">version information</reference>
+    </references>
+    <cpe-23:cpe23-item name="cpe:2.3:a:7andi-fs.co:denny\'s:1.0.1:*:*:*:*:android:*:*"/>
+  </cpe-item>
 </cpe-list>

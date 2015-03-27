@@ -2,4 +2,4 @@ repos
 *DS_Store
 local.py
 *.pyc
-
+*.xml

@@ -1,21 +1,34 @@
 from django.contrib import admin
-from .models import CPE, CPETitle, CPEReference, CPEDictionaryUpdate, cpe23_wfn_to_dict
+from .models import Item, Reference, Dictionary, cpe23_wfn_to_dict
 
 
-class CPEAdmin(admin.ModelAdmin):
-    list_display = ['part', 'cpe23_wfn', 'deprecated' ]
+class ItemAdmin(admin.ModelAdmin):
+    list_display = [
+        'part',
+        'cpe23_wfn',
+        'deprecated'
+    ]
     list_filter = ['deprecated', 'dictionary', 'deprecation_type']
 
-admin.site.register(CPE, CPEAdmin)
+admin.site.register(Item, ItemAdmin)
 
 
-class CPEReferenceAdmin(admin.ModelAdmin):
+class ReferenceAdmin(admin.ModelAdmin):
     list_display = ['value', 'url']
 
-admin.site.register(CPEReference, CPEReferenceAdmin)
+admin.site.register(Reference, ReferenceAdmin)
 
 
-class CPEDictionaryUpdateAdmin(admin.ModelAdmin):
-    list_display = ('schema_version', 'product_version', 'generated', 'created')
+class DictionaryAdmin(admin.ModelAdmin):
+    list_display = (
+        'schema_version', 
+        'product_version',
+        'generated',
+        'num_items',
+        'num_deprecated',
+        'num_references',
+        'num_existing',
+        'created'
+    )
 
-admin.site.register(CPEDictionaryUpdate, CPEDictionaryUpdateAdmin)
+admin.site.register(Dictionary, DictionaryAdmin)

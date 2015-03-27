@@ -22,36 +22,39 @@ WFN_KEYS = [
 ]
 
 
-class CPEDictionaryUpdate(models.Model):
+class Dictionary(models.Model):
     title = models.CharField(max_length=255)
     schema_version = models.DecimalField(max_digits=4, decimal_places=2)
     product_version = models.DecimalField(max_digits=4, decimal_places=2)
     generated = models.DateTimeField()
     notes = models.TextField(blank=True, null=True)
+    num_items = models.PositiveIntegerField(default=0)
+    num_deprecated = models.PositiveIntegerField(default=0)
+    num_references = models.PositiveIntegerField(default=0)
+    num_existing = models.PositiveIntegerField(default=0)
     start = models.DateTimeField(blank=True, null=True)
     end = models.DateTimeField(blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
-        return 'Update (%s)' % self.generated 
+        return 'Update (%s)' % self.generated
+
+    class Meta:
+        get_latest_by = 'created'
+        verbose_name_plural = 'dictionaries'
 
 
-class CPETitle(models.Model):
-    lang = models.CharField(max_length=5)
-    title = models.CharField(max_length=255, unique=True)
-
-
-class CPEReference(models.Model):
+class Reference(models.Model):
     value = models.CharField(max_length=255)
     url = models.URLField(max_length=2000)
-    dictionary = models.ForeignKey(CPEDictionaryUpdate)
+    dictionary = models.ForeignKey(Dictionary)
 
 
 def cpe23_wfn_to_dict(wfn):
     return dict(zip(WFN_KEYS, wfn.split(':')[2:]))
 
 
-class CPE(models.Model):
+class Item(models.Model):
     PART_CHOICES = (
         (APPLICATIONS, 'Applications'),
         (OPERATING_SYSTEMS, 'Operating Systems'),
@@ -65,7 +68,7 @@ class CPE(models.Model):
     cpe22_wfn = models.CharField(max_length=255, unique=True, null=True, blank=True)
     cpe23_wfn = models.CharField(max_length=255, unique=True)
     title = models.CharField(max_length=255)
-    references = models.ManyToManyField(CPEReference)
+    references = models.ManyToManyField(Reference)
     deprecated = models.BooleanField(default=False)
     deprecation_date = models.DateTimeField(blank=True, null=True)
     deprecation_type = models.CharField(
@@ -87,4 +90,6 @@ class CPE(models.Model):
     target_sw = models.CharField(max_length=255, blank=True, null=True)
     target_hw = models.CharField(max_length=255, blank=True, null=True)
     other = models.CharField(max_length=255, blank=True, null=True)
-    dictionary = models.ForeignKey(CPEDictionaryUpdate)
+    dictionary = models.ForeignKey(Dictionary)
+
+
