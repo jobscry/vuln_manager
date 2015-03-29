@@ -28,7 +28,7 @@ class Updater(Updater):
         self.count_not_updated = 0
         self.count_updated = 0
         latest = Vulnerability.objects.latest()
-        self.latest = latest.published
+        self.latest = latest.modified
 
     def save(self):
         self.model.objects.bulk_create(self.items.values())

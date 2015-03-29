@@ -70,5 +70,5 @@ class Vulnerability(models.Model):
         return self.cve_id
 
     class Meta:
-        get_latest_by = 'published'
+        get_latest_by = 'modified'
         verbose_name_plural = 'vulnerabilities'
