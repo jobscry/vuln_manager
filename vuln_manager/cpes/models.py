@@ -36,8 +36,8 @@ class Dictionary(models.Model):
     num_deprecated = models.PositiveIntegerField(default=0)
     num_references = models.PositiveIntegerField(default=0)
     num_existing = models.PositiveIntegerField(default=0)
-    start = models.DateTimeField(blank=True, null=True)
-    end = models.DateTimeField(blank=True, null=True)
+    start = models.FloatField(blank=True, null=True)
+    duration = models.FloatField(blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
@@ -98,3 +98,6 @@ class Item(models.Model):
     target_hw = models.CharField(max_length=255, blank=True, null=True)
     other = models.CharField(max_length=255, blank=True, null=True)
     dictionary = models.ForeignKey(Dictionary)
+
+    def __unicode__(self):
+        return self.cpe23_wfn

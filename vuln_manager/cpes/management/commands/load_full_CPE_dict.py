@@ -1,14 +1,15 @@
 from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
-from django.utils.timezone import now
 from django.utils.dateparse import parse_datetime
 from cpes.models import (
     Item, Dictionary, cpe23_wfn_to_dict,
 )
-from .utils import CPEUpdater, fast_iter
+from .utils import Updater, fast_iter
 
 from os.path import join, normpath, isfile
 from lxml import etree
+
+import time
 
 
 CPE_DICT = '{http://cpe.mitre.org/dictionary/2.0}'
@@ -29,7 +30,7 @@ def parse_cpes(element, cpe_updater):
         cpe_title = titles[0]
 
     defaults = cpe23_wfn_to_dict(cpe23_wfn)
-    defaults['dictionary'] = cpe_updater.update
+    defaults['dictionary'] = cpe_updater.dictionary
     defaults['title'] = cpe_title
     defaults['cpe22_wfn'] = cpe22_wfn
     defaults['cpe23_wfn'] = cpe23_wfn
@@ -73,7 +74,7 @@ class Command(BaseCommand):
         tag = CPE_DICT + 'cpe-item'
 
         context = etree.iterparse(path, events=('end', ))
-        update = Dictionary(start=now())
+        update = Dictionary(start=float(time.time()))
         update.title = context.next()[1].text
         update.product_version = context.next()[1].text
         update.schema_version = context.next()[1].text
@@ -82,16 +83,17 @@ class Command(BaseCommand):
         )
         update.save()
 
-        cpe_updater = CPEUpdater(update)
+        cpe_updater = Updater(update, Item)
 
         context = etree.iterparse(path, events=('end', ), tag=tag)
         fast_iter(context, parse_cpes, cpe_updater)
 
-        cpe_updater.save_cpes()
+        cpe_updater.save()
 
         update.num_items = cpe_updater.total_count
         update.num_deprecated = cpe_updater.count_deprecated
         update.num_references = cpe_updater.count_refs
         update.num_existing = 0
-        update.end = now()
+        end = float(time.time())
+        update.duration = end - update.start
         update.save()

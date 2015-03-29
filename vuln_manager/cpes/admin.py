@@ -22,6 +22,7 @@ class DictionaryAdmin(admin.ModelAdmin):
         'num_deprecated',
         'num_references',
         'num_existing',
+        'duration',
         'created'
     )
 
