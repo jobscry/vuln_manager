@@ -73,42 +73,71 @@ def get_refrences(references):
 
 
 def get_vuln_item(element, cve_id, published, modified, updater):
-    return dict( 
+    return dict(
         cve_id=element.get('id'),
         published=published,
         modified=modified,
         cwe=get_xpath(element, 'a:cwe/@id', False),
         summary=get_xpath(element, 'a:summary/text()', False),
-        references=[x for x in get_refrences(get_xpath(element, 'a:references/a:reference'))],
-        cvss_base_score=get_xpath(element, 'a:cvss/b:base_metrics/b:score/text()', False),
-        cvss_access_vector=get_xpath(element, 'a:cvss/b:base_metrics/b:access-vector/text()', False),
-        cvss_access_complexity=get_xpath(element, 'a:cvss/b:base_metrics/b:access-complexity/text()', False),
-        cvss_authentication=get_xpath(element, 'a:cvss/b:base_metrics/b:authentication/text()', False),
-        cvss_confidentiality_impact=get_xpath(element, 'a:cvss/b:base_metrics/b:confidentiality-impact/text()', False),
-        cvss_integrity_impact=get_xpath(element, 'a:cvss/b:base_metrics/b:integrity-impact/text()', False),
-        cvss_availability_impact=get_xpath(element, 'a:cvss/b:base_metrics/b:availability-impact/text()', False),
-        cvss_generated=get_xpath_date(element, 'a:cvss/b:base_metrics/b:generated-on-datetime/text()'),
+        references=[x for x in get_refrences(
+            get_xpath(element, 'a:references/a:reference'))],
+        cvss_base_score=get_xpath(
+            element, 'a:cvss/b:base_metrics/b:score/text()', False),
+        cvss_access_vector=get_xpath(
+            element, 'a:cvss/b:base_metrics/b:access-vector/text()', False),
+        cvss_access_complexity=get_xpath(
+            element,
+            'a:cvss/b:base_metrics/b:access-complexity/text()',
+            False
+        ),
+        cvss_authentication=get_xpath(
+            element, 'a:cvss/b:base_metrics/b:authentication/text()', False),
+        cvss_confidentiality_impact=get_xpath(
+            element,
+            'a:cvss/b:base_metrics/b:confidentiality-impact/text()',
+            False
+        ),
+        cvss_integrity_impact=get_xpath(
+            element, 'a:cvss/b:base_metrics/b:integrity-impact/text()', False),
+        cvss_availability_impact=get_xpath(
+            element,
+            'a:cvss/b:base_metrics/b:availability-impact/text()',
+            False
+        ),
+        cvss_generated=get_xpath_date(
+            element, 'a:cvss/b:base_metrics/b:generated-on-datetime/text()'),
         dictionary=updater.dictionary
     )
 
 
 def parse_cves(element, updater):
-    published = published=get_xpath_date(element, 'a:published-datetime/text()')
+    published = get_xpath_date(element, 'a:published-datetime/text()')
 
     if published > updater.latest:
 
-        cve_id=element.get('id')
+        cve_id = element.get('id')
         modified = get_xpath_date(element, 'a:last-modified-datetime/text()')
 
         if Vulnerability.objects.filter(cve_id=cve_id).exists():
             cve = Vulnerability.objects.get(cve_id=cve_id)
-            
+
             if modified > cve.modified:
-                cve.__dict__.update(get_vuln_item(element, cve_id, published, modified, updater))
+                cve.__dict__.update(
+                    get_vuln_item(
+                        element,
+                        cve_id,
+                        published,
+                        modified,
+                        updater
+                    )
+                )
                 cve.save()
                 cve.cpes.clear()
                 cve.cpes.add(Item.objects.filter(
-                    cpe22_wfn__in=get_xpath(element, 'a:vulnerable-software-list/a:product/text()')
+                    cpe22_wfn__in=get_xpath(
+                        element,
+                        'a:vulnerable-software-list/a:product/text()'
+                    )
                 ).values_list('pk', flat=True))
                 updater.count_updated += 1
             else:
@@ -116,9 +145,20 @@ def parse_cves(element, updater):
         else:
             updater.add_items(
                 Item.objects.filter(
-                    cpe22_wfn__in=get_xpath(element, 'a:vulnerable-software-list/a:product/text()')
+                    cpe22_wfn__in=get_xpath(
+                        element,
+                        'a:vulnerable-software-list/a:product/text()'
+                    )
                 ).values_list('pk', flat=True),
-                Vulnerability(**get_vuln_item(element, cve_id, published, modified, updater))
+                Vulnerability(
+                    **get_vuln_item(
+                        element,
+                        cve_id,
+                        published,
+                        modified,
+                        updater
+                    )
+                )
             )
     else:
         updater.count_not_updated += 1
@@ -145,7 +185,8 @@ class Command(BaseCommand):
         dictionary.save()
         updater = Updater(dictionary, Vulnerability)
 
-        context = etree.iterparse(path, events=('end', ), tag=FEED_SCHEMA + 'entry')
+        context = etree.iterparse(
+            path, events=('end', ), tag=FEED_SCHEMA + 'entry')
         fast_iter(context, parse_cves, updater)
         updater.save()
 
@@ -154,4 +195,3 @@ class Command(BaseCommand):
         dictionary.num_not_updated = updater.count_not_updated
         dictionary.duration = float(time.time()) - dictionary.start
         dictionary.save()
-
