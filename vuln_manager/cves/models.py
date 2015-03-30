@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from cpes.models import Item
 
+
 LOCAL = 'LOCAL'
 ADJACENT_NETWORK = 'ADJACENT_NETWORK'
 NETWORK = 'NETWORK'
@@ -13,6 +14,7 @@ SINGLE = 'SINGLE'
 NONE = 'NONE'
 PARTIAL = 'PARTIAL'
 COMPLETE = 'COMPLETE'
+
 
 class VulnerabilityDictionary(models.Model):
     num_items = models.PositiveIntegerField(default=0)
@@ -57,13 +59,50 @@ class Vulnerability(models.Model):
     references = ArrayField(
         models.URLField(max_length=2000), blank=True, null=True
     )
-    cvss_base_score = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
-    cvss_access_vector = models.CharField(max_length=20, choices=ACCESS_VECTOR_CHOICES, default=LOCAL, null=True, blank=True)
-    cvss_access_complexity = models.CharField(max_length=20, choices=ACCESS_COMPLEXITY_CHOICES, default=LOW, null=True, blank=True)
-    cvss_authentication = models.CharField(max_length=20, choices=AUTHENTICATION_CHOICES, default=NONE, null=True, blank=True)
-    cvss_confidentiality_impact = models.CharField(max_length=20, choices=IMPACT_CHOICES, default=NONE, null=True, blank=True)
-    cvss_integrity_impact = models.CharField(max_length=20, choices=IMPACT_CHOICES, default=NONE, null=True, blank=True)
-    cvss_availability_impact = models.CharField(max_length=20, choices=IMPACT_CHOICES, default=NONE, null=True, blank=True)
+    cvss_base_score = models.DecimalField(
+        max_digits=3, decimal_places=1, null=True, blank=True)
+    cvss_access_vector = models.CharField(
+        max_length=20,
+        choices=ACCESS_VECTOR_CHOICES,
+        default=LOCAL,
+        null=True,
+        blank=True
+    )
+    cvss_access_complexity = models.CharField(
+        max_length=20,
+        choices=ACCESS_COMPLEXITY_CHOICES,
+        default=LOW,
+        null=True,
+        blank=True
+    )
+    cvss_authentication = models.CharField(
+        max_length=20,
+        choices=AUTHENTICATION_CHOICES,
+        default=NONE,
+        null=True,
+        blank=True
+    )
+    cvss_confidentiality_impact = models.CharField(
+        max_length=20,
+        choices=IMPACT_CHOICES,
+        default=NONE,
+        null=True,
+        blank=True
+    )
+    cvss_integrity_impact = models.CharField(
+        max_length=20,
+        choices=IMPACT_CHOICES,
+        default=NONE,
+        null=True,
+        blank=True
+    )
+    cvss_availability_impact = models.CharField(
+        max_length=20,
+        choices=IMPACT_CHOICES,
+        default=NONE,
+        null=True,
+        blank=True
+    )
     cvss_generated = models.DateTimeField(null=True, blank=True)
 
     def __unicode__(self):

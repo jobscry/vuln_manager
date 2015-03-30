@@ -3,7 +3,13 @@ from django.conf import settings
 from cpes.models import Item
 from cpes.management.commands.utils import fast_iter
 from cves.models import VulnerabilityDictionary, Vulnerability
-from .utils import Updater, get_xpath, get_xpath_date
+from .utils import (
+    Updater,
+    get_xpath,
+    get_xpath_date,
+    get_refrences,
+    FEED_SCHEMA
+)
 from os.path import join, normpath, isfile
 from lxml import etree
 
@@ -96,6 +102,5 @@ class Command(BaseCommand):
         updater.save()
 
         dictionary.num_items = updater.total_count
-        end = float(time.time())
-        dictionary.duration = end - dictionary.start
+        dictionary.duration = float(time.time()) - dictionary.start
         dictionary.save()
