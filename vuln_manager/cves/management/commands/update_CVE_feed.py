@@ -152,7 +152,6 @@ class Command(BaseCommand):
         dictionary.num_items = updater.total_count
         dictionary.num_updated = updater.count_updated
         dictionary.num_not_updated = updater.count_not_updated
-        end = float(time.time())
-        dictionary.duration = end - dictionary.start
+        dictionary.duration = float(time.time()) - dictionary.start
         dictionary.save()
 

@@ -1,71 +1,14 @@
 from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
-from django.utils.dateparse import parse_datetime
 from cpes.models import Item
-from cpes.management.commands.utils import Updater as Updater, fast_iter
+from cpes.management.commands.utils import fast_iter
 from cves.models import VulnerabilityDictionary, Vulnerability
-
+from .utils import Updater, get_xpath, get_xpath_date
 from os.path import join, normpath, isfile
 from lxml import etree
 
 import time
 
-
-VULNERABILITY_SCHEMA = '{http://scap.nist.gov/schema/vulnerability/0.4}'
-FEED_SCHEMA = '{http://scap.nist.gov/schema/feed/vulnerability/2.0}'
-NAMESPACE_DICT = {
-    'a': 'http://scap.nist.gov/schema/vulnerability/0.4',
-    'b': 'http://scap.nist.gov/schema/cvss-v2/0.2'
-}
-
-
-class Updater(Updater):
-
-    def __init__(self, dictionary, model):
-        super(Updater, self).__init__(dictionary, model)
-        self.items = {}
-        self.cpes = {}
-
-    def save(self):
-        self.model.objects.bulk_create(self.items.values())
-        for key, value in self.items.iteritems():
-            cve = self.model.objects.get(cve_id=value.cve_id)
-            cve.cpes.add(*self.cpes[key])
-        self.reset()
-
-    def reset(self):
-        self.items = {}
-        self.cpes = {}
-        self.count = 0
-
-    def add_items(self, cpes, cve):
-        self.items[self.count] = cve
-        self.cpes[self.count] = cpes
-        self.increment_count()
-
-
-def get_xpath(e, p, all=True):
-    if all:
-        return e.xpath(p, namespaces=NAMESPACE_DICT)
-    else:
-        val = e.xpath(p, namespaces=NAMESPACE_DICT)
-        try:
-            return val[0]
-        except IndexError:
-            return None
-
-
-def get_xpath_date(e, p):
-    val = e.xpath(p, namespaces=NAMESPACE_DICT)
-    try:
-        return parse_datetime(val[0])
-    except IndexError:
-        return None
-
-
-def get_refrences(references):
-    for r in references:
-        yield (r.text, r.get('href'))
 
 
 def parse_cves(element, updater):
