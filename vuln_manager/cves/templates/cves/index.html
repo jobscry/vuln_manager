@@ -25,6 +25,7 @@
 {% endblock breadcrumb_items %}
 
 {% block content %}
+<h1>{{ cpe }}</h1>
 {% for obj in objects  %}
     <h3 class="page-header">
         {{ obj.cve_id }}
@@ -32,5 +33,7 @@
     </h3>
     <p>Published <time datetime="{{ obj.published|date:'c' }}">{{ obj.published|timesince }}</time> ago. {{ obj.nvd_url|urlize }}</p>
     <p>{{ obj.summary }}</p>
+{% empty %}
+<p>No CVEs found.</p>
 {% endfor %}
 {% endblock content %}
