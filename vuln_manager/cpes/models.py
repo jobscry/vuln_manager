@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.utils.http import urlquote
+from model_utils import Choices
 
 
 APPLICATIONS = 'a'
@@ -56,12 +58,12 @@ class Item(models.Model):
     """
     CPE Item model.
     """
-    PART_CHOICES = (
+    PART_CHOICES = Choices(
         (APPLICATIONS, 'Applications'),
         (OPERATING_SYSTEMS, 'Operating Systems'),
         (HARDWARE, 'Hardware')
     )
-    DEPRECATION_TYPE_CHOICES = (
+    DEPRECATION_TYPE_CHOICES = Choices(
         (NAME_CORRECTION, 'Correction'),
         (NAME_REMOVAL, 'Removal'),
         (ADDITIONAL_INFORMATION, 'Additional Information')
@@ -98,6 +100,9 @@ class Item(models.Model):
     target_hw = models.CharField(max_length=255, blank=True, null=True)
     other = models.CharField(max_length=255, blank=True, null=True)
     dictionary = models.ForeignKey(Dictionary)
+
+    def url_vendor(self):
+        return urlquote(self.vendor)
 
     def __unicode__(self):
         return self.cpe23_wfn

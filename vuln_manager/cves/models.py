@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from cpes.models import Item
+from model_utils import Choices
 
 
 LOCAL = 'LOCAL'
@@ -29,22 +30,22 @@ class VulnerabilityDictionary(models.Model):
 
 
 class Vulnerability(models.Model):
-    ACCESS_VECTOR_CHOICES = (
+    ACCESS_VECTOR_CHOICES = Choices(
         (LOCAL, 'Local'),
         (ADJACENT_NETWORK, 'Adjacent Network'),
         (NETWORK, 'Network')
     )
-    ACCESS_COMPLEXITY_CHOICES = (
+    ACCESS_COMPLEXITY_CHOICES = Choices(
         (LOW, 'Low'),
         (MEDIUM, 'Medium'),
         (HIGH, 'High')
     )
-    AUTHENTICATION_CHOICES = (
+    AUTHENTICATION_CHOICES = Choices(
         (SINGLE, 'Single'),
         (MULTIPLE, 'Multiple'),
         (NONE, 'None')
     )
-    IMPACT_CHOICES = (
+    IMPACT_CHOICES = Choices(
         (NONE, 'None'),
         (PARTIAL, 'Partial'),
         (COMPLETE, 'Complete')

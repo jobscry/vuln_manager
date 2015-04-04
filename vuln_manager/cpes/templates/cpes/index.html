@@ -1,0 +1,38 @@
+{% extends "core/base.html" %}
+
+{% load vuln_extras %}
+
+{% block page_title %}Home{% endblock page_title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+{% if level != 'part' %}
+        <h1>{{ part|part_display }} {{ level|title }}</h1>
+{% else %}
+        <h1>{{ level|title }}</h1>
+{% endif %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+{% include "utils/pagination.html" %}
+    </div>
+</div>
+
+<p>
+{% for item in objects %}
+    {% if not next_level %}
+    <a href="{% url 'cpes:version_index' %}{{ q_dict|qstring }}product={{ item.url }}">{{ item.obj }}</a>
+    {% else %}
+    <a href="{% url 'cpes:part_index' next_level %}{{ q_dict|qstring }}{{ level }}={{ item.url }}">{{ item.obj }}</a>
+    {% endif %}
+    <small>{{ item.count }}</small>{% if not forloop.last %}, {% endif %}
+{% endfor %}
+</p>
+<div class="row">
+    <div class="col-sm-12">
+{% include "utils/pagination.html" %}
+    </div>
+</div>
+{% endblock content %}

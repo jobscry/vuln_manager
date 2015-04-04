@@ -1,0 +1,33 @@
+{% load vuln_extras %}
+
+{% if objects.has_other_pages %}
+<div class="pagination pull-right">
+    <nav>
+        <ul class="pagination">
+     {% if objects.has_previous %}
+            <li>
+                <a href="{{ q_dict|qstring:True }}page={{ objects.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+    {% endif %}
+    {% for number in pages %}
+        {% if number == -1 %}
+            <li class="disabled"><a href="#">&hellip;</a></li>
+        {% else %}
+            <li{% if objects.number == number %} class="disabled"{% endif %}>
+                <a href="{{ q_dict|qstring:True }}page={{ number }}">{{ number }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+    {% if objects.has_next %}
+            <li>
+                <a href="{{ q_dict|qstring:True }}page={{ objects.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+    {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endif %}
