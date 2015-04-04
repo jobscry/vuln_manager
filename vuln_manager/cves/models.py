@@ -16,6 +16,8 @@ NONE = 'NONE'
 PARTIAL = 'PARTIAL'
 COMPLETE = 'COMPLETE'
 
+NVD_URL = 'https://web.nvd.nist.gov/view/vuln/detail?vulnId='
+
 
 class VulnerabilityDictionary(models.Model):
     num_items = models.PositiveIntegerField(default=0)
@@ -106,9 +108,23 @@ class Vulnerability(models.Model):
     )
     cvss_generated = models.DateTimeField(null=True, blank=True)
 
+    def cvss_vector(self):
+        return u'(AV:%s/AC:%s/Au:%s/C:%s/I:%s/A:%s)' % (
+            self.cvss_access_vector,
+            self.cvss_access_complexity,
+            self.cvss_authentication,
+            self.cvss_confidentiality_impact,
+            self.cvss_integrity_impact,
+            self.cvss_availability_impact
+        )
+
+    def nvd_url(self):
+        return NVD_URL + self.cve_id
+
     def __unicode__(self):
         return self.cve_id
 
     class Meta:
         get_latest_by = 'modified'
         verbose_name_plural = 'vulnerabilities'
+        ordering = ['-published', '-modified']

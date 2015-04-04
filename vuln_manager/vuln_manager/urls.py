@@ -3,5 +3,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^cpes/', include('cpes.urls', namespace='cpes'))
+    url(r'^cpes/', include('cpes.urls', namespace='cpes')),
+    url(r'^cves/', include('cves.urls', namespace='cves'))
 ]

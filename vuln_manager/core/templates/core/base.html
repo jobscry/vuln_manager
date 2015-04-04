@@ -39,7 +39,16 @@
             </div>
         </nav>
 
-        <div class="container-fluid">{% block content %}{% endblock content %}</div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ol class="breadcrumb">
+            {% block breadcrumb_items %}{% endblock breadcrumb_items %}
+                    </ol>
+                </div>
+            </div>
+            {% block content %}{% endblock content %}
+        </div>
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </body>

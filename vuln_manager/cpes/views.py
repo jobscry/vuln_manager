@@ -37,11 +37,14 @@ def index(request, level='part'):
         item_list = Item.objects.values('part').order_by('part').annotate(count=Count('vendor'))
         q_dict = {}
         next_level = 'vendor'
+        part = None
+        vendor = None
     elif level == 'vendor':
         part = get_part(request)
         item_list = Item.objects.filter(part=part).values('vendor').order_by('vendor').annotate(count=Count('product'))
         q_dict = {'part': part}
         next_level = 'product'
+        vendor = None
     elif level == 'product':
         part = get_part(request)
         vendor = get_val(request, 'vendor')
@@ -81,6 +84,7 @@ def index(request, level='part'):
             request,
             {
                 'part': part,
+                'vendor': vendor,
                 'objects': objects,
                 'level': level,
                 'q_dict': q_dict,
@@ -102,6 +106,10 @@ def version_index(request):
         'part', 'vendor', 'product', 'pk', 'cpe23_wfn'
     ), part=part, vendor=vendor, product=product)
 
+    q_dict = {
+        'part': part, 'vendor': vendor, 'product': product
+    }
+
     return render_to_response(
         'cpes/version_index.html',
         RequestContext(
@@ -111,7 +119,7 @@ def version_index(request):
                 'vendor': vendor,
                 'product': product,
                 'objects': objects,
-
+                'q_dict': q_dict
             }
         )
     ) 

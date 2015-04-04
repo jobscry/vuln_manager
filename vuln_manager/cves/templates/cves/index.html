@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+
+{% load vuln_extras %}
+
+{% block page_title %}
+    CVEs by CPE
+{% endblock page_title %}
+
+{% block breadcrumb_items %}
+    <li><a href="{% url 'cpes:index' %}">Parts</a></li>
+    <li>
+        <a href="{% url 'cpes:part_index' 'vendor' %}?part={{ cpe.part }}">
+            {{ cpe.part|part_display }} Vendors
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'cpes:part_index' 'product' %}{{ q_dict|qstring|safe }}">
+            {{ cpe.vendor }}
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'cpes:version_index' %}{{ q_dict|qstring|safe }}">Versions</a>
+    </li>
+    <li>CVEs</li>
+{% endblock breadcrumb_items %}
+
+{% block content %}
+{% for obj in objects  %}
+    <h3 class="page-header">
+        {{ obj.cve_id }}
+        <small>{{ obj.cvss_base_score }} {{ obj.cvss_vector }}</small>
+    </h3>
+    <p>Published <time datetime="{{ obj.published|date:'c' }}">{{ obj.published|timesince }}</time> ago. {{ obj.nvd_url|urlize }}</p>
+    <p>{{ obj.summary }}</p>
+{% endfor %}
+{% endblock content %}
