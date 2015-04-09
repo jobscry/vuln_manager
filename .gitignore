@@ -3,3 +3,4 @@ repos
 local.py
 *.pyc
 *.xml
+__pycache__

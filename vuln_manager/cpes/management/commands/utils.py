@@ -1,4 +1,6 @@
-MAX_ITEMS = 10000
+from django.conf import settings
+
+MAX_ITEMS = getattr(settings, 'PARSER_MAX_ITEMS', 1000)
 
 
 class Updater(object):

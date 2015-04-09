@@ -75,11 +75,15 @@ class Command(BaseCommand):
 
         context = etree.iterparse(path, events=('end', ))
         update = Dictionary(start=float(time.time()))
-        update.title = context.next()[1].text
-        update.product_version = context.next()[1].text
-        update.schema_version = context.next()[1].text
+        n = next(context)
+        update.title = n[1].text
+        n = next(context)
+        update.product_version = n[1].text
+        n = next(context)
+        update.schema_version = n[1].text
+        n = next(context)
         update.generated = parse_datetime(
-            context.next()[1].text
+            n[1].text
         )
         update.save()
 
