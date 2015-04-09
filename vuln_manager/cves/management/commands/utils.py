@@ -1,4 +1,5 @@
 from django.utils.dateparse import parse_datetime
+from django.utils.timezone import now
 from cpes.management.commands.utils import Updater
 from cves.models import Vulnerability
 
@@ -19,12 +20,15 @@ class Updater(Updater):
         self.cpes = {}
         self.count_not_updated = 0
         self.count_updated = 0
-        latest = Vulnerability.objects.latest()
-        self.latest = latest.modified
+        try:
+            latest = Vulnerability.objects.latest()
+            self.latest = latest.modified
+        except Vulnerability.DoesNotExist:
+            self.latest = now()
 
     def save(self):
         self.model.objects.bulk_create(self.items.values())
-        for key, value in self.items.iteritems():
+        for key, value in self.items.items():
             cve = self.model.objects.get(cve_id=value.cve_id)
             cve.cpes.add(*self.cpes[key])
         self.reset()
