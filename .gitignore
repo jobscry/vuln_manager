@@ -4,3 +4,7 @@ local.py
 *.pyc
 *.xml
 __pycache__
+.coverage
+/static
+.coveragerc
+htmlcov
