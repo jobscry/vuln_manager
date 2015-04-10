@@ -42,7 +42,7 @@ class Dictionary(models.Model):
     duration = models.FloatField(blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return 'Update (%s)' % self.generated
 
     class Meta:
@@ -104,5 +104,5 @@ class Item(models.Model):
     def url_vendor(self):
         return urlquote(self.vendor)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.cpe23_wfn
