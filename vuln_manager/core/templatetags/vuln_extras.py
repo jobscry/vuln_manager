@@ -9,7 +9,7 @@ register = template.Library()
 @register.filter(needs_autoescape=False)
 def qstring(val_dict, end_comma=True):
     q_strings = []
-    for key, val in val_dict.iteritems():
+    for key, val in val_dict.items():
         if val is not None:
             q_strings.append(urlquote(key) + '=' + urlquote(val))
     ret_string = '?' + '&'.join(q_strings)
