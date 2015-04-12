@@ -5,8 +5,8 @@ from .base import *
 ########## IN-MEMORY TEST DATABASE
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": ":memory:",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "vuln_test",
         "USER": "",
         "PASSWORD": "",
         "HOST": "",
