@@ -1,0 +1,82 @@
+[
+{
+  "pk": 1,
+  "model": "cves.vulnerabilitydictionary",
+  "fields": {
+    "num_updated": 0,
+    "num_not_updated": 0,
+    "start": 1428596850.64405,
+    "num_items": 3,
+    "created": "2015-04-09T16:27:30.649Z",
+    "duration": 0.0539729595184326
+  }
+},
+{
+  "pk": 1,
+  "model": "cves.vulnerability",
+  "fields": {
+    "summary": "The Windows Error Reporting (WER) component in Microsoft Windows 8, Windows 8.1, Windows Server 2012 Gold and R2, and Windows RT Gold and 8.1 allows local users to bypass the Protected Process Light protection mechanism and read the contents of arbitrary process-memory locations by leveraging administrative privileges, aka \"Windows Error Reporting Security Feature Bypass Vulnerability.\"",
+    "cvss_access_vector": "LOCAL",
+    "dictionary": 1,
+    "cvss_base_score": "1.9",
+    "references": "[\"('MS15-006', 'http://technet.microsoft.com/security/bulletin/MS15-006')\"]",
+    "published": "2015-01-13T22:59:00.050Z",
+    "cvss_generated": "2015-01-14T21:32:46.090Z",
+    "cwe": "CWE-264",
+    "cpes": [],
+    "cvss_confidentiality_impact": "PARTIAL",
+    "cvss_access_complexity": "MEDIUM",
+    "cve_id": "CVE-2015-0001",
+    "modified": "2015-01-14T21:50:51.080Z",
+    "cvss_availability_impact": "NONE",
+    "cvss_authentication": "NONE",
+    "cvss_integrity_impact": "NONE"
+  }
+},
+{
+  "pk": 2,
+  "model": "cves.vulnerability",
+  "fields": {
+    "summary": "The AhcVerifyAdminContext function in ahcache.sys in the Application Compatibility component in Microsoft Windows 7 SP1, Windows Server 2008 R2 SP1, Windows 8, Windows 8.1, Windows Server 2012 Gold and R2, and Windows RT Gold and 8.1 does not verify that an impersonation token is associated with an administrative account, which allows local users to gain privileges by running AppCompatCache.exe with a crafted DLL file, aka MSRC ID 20544 or \"Microsoft Application Compatibility Infrastructure Elevation of Privilege Vulnerability.\"",
+    "cvss_access_vector": "LOCAL",
+    "dictionary": 1,
+    "cvss_base_score": "7.2",
+    "references": "[\"('MS15-001', 'http://technet.microsoft.com/security/bulletin/MS15-001')\", \"('https://code.google.com/p/google-security-research/issues/detail?id=118', 'https://code.google.com/p/google-security-research/issues/detail?id=118')\", \"('http://www.zdnet.com/article/google-discloses-unpatched-windows-vulnerability/', 'http://www.zdnet.com/article/google-discloses-unpatched-windows-vulnerability/')\", \"('http://twitter.com/sambowne/statuses/550384131683520512', 'http://twitter.com/sambowne/statuses/550384131683520512')\"]",
+    "published": "2015-01-13T22:59:01.253Z",
+    "cvss_generated": "2015-01-14T21:20:33.273Z",
+    "cwe": "CWE-264",
+    "cpes": [],
+    "cvss_confidentiality_impact": "COMPLETE",
+    "cvss_access_complexity": "LOW",
+    "cve_id": "CVE-2015-0002",
+    "modified": "2015-01-14T21:51:14.253Z",
+    "cvss_availability_impact": "COMPLETE",
+    "cvss_authentication": "NONE",
+    "cvss_integrity_impact": "COMPLETE"
+  }
+},
+{
+  "pk": 3,
+  "model": "cves.vulnerability",
+  "fields": {
+    "summary": "win32k.sys in the kernel-mode drivers in Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8, Windows 8.1, Windows Server 2012 Gold and R2, and Windows RT Gold and 8.1 allows local users to gain privileges or cause a denial of service (NULL pointer dereference) via a crafted application, aka \"Win32k Elevation of Privilege Vulnerability.\"",
+    "cvss_access_vector": "LOCAL",
+    "dictionary": 1,
+    "cvss_base_score": "6.9",
+    "references": "[\"('MS15-010', 'http://technet.microsoft.com/security/bulletin/MS15-010')\", \"('ms-kmd-cve20150003-priv-esc(100430)', 'http://xforce.iss.net/xforce/xfdb/100430')\", \"('72457', 'http://www.securityfocus.com/bid/72457')\"]",
+    "published": "2015-02-11T03:00:28.763Z",
+    "cvss_generated": "2015-02-11T16:41:39.370Z",
+    "cwe": "CWE-264",
+    "cpes": [
+      4
+    ],
+    "cvss_confidentiality_impact": "COMPLETE",
+    "cvss_access_complexity": "MEDIUM",
+    "cve_id": "CVE-2015-0003",
+    "modified": "2015-02-19T03:00:10.227Z",
+    "cvss_availability_impact": "COMPLETE",
+    "cvss_authentication": "NONE",
+    "cvss_integrity_impact": "COMPLETE"
+  }
+}
+]
