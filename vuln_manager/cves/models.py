@@ -109,7 +109,7 @@ class Vulnerability(models.Model):
     cvss_generated = models.DateTimeField(null=True, blank=True)
 
     def cvss_vector(self):
-        return u'(AV:%s/AC:%s/Au:%s/C:%s/I:%s/A:%s)' % (
+        return '(AV:%s/AC:%s/Au:%s/C:%s/I:%s/A:%s)' % (
             self.cvss_access_vector,
             self.cvss_access_complexity,
             self.cvss_authentication,
@@ -121,7 +121,7 @@ class Vulnerability(models.Model):
     def nvd_url(self):
         return NVD_URL + self.cve_id
 
-    def __unicode__(self):
+    def __str__(self):
         return self.cve_id
 
     class Meta:
