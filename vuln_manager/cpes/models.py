@@ -43,7 +43,7 @@ class Dictionary(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return 'Update (%s)' % self.generated
+        return 'CPE Dictionary (%s)' % self.generated
 
     class Meta:
         get_latest_by = 'created'
