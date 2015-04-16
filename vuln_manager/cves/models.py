@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from cpes.models import Item
+from core.models import BaseDictionary
 from model_utils import Choices
 
 
@@ -19,13 +20,9 @@ COMPLETE = 'COMPLETE'
 NVD_URL = 'https://web.nvd.nist.gov/view/vuln/detail?vulnId='
 
 
-class VulnerabilityDictionary(models.Model):
-    num_items = models.PositiveIntegerField(default=0)
+class VulnerabilityDictionary(BaseDictionary):
     num_updated = models.PositiveIntegerField(default=0)
     num_not_updated = models.PositiveIntegerField(default=0)
-    start = models.FloatField()
-    duration = models.FloatField(blank=True, null=True)
-    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name_plural = 'Vulnerability Dictionaries'
