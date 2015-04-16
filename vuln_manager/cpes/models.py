@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from django.utils.http import urlquote
 from model_utils import Choices
+from core.models import BaseDictionary
 
 
 APPLICATIONS = 'a'
@@ -25,25 +26,18 @@ WFN_KEYS = [
 ]
 
 
-class Dictionary(models.Model):
+class Dictionary(BaseDictionary):
     """
     Dictionary model to track updates to the database.
     """
     title = models.CharField(max_length=255)
-    dictionary_file = models.FileField(upload_to='data/cpe_dicts')
     schema_version = models.DecimalField(max_digits=4, decimal_places=2)
     product_version = models.DecimalField(max_digits=4, decimal_places=2)
     generated = models.DateTimeField()
-    last_modified = models.DateTimeField(blank=True, null=True)
-    etag = models.CharField(max_length=100, blank=True, null=True)
-    notes = models.TextField(blank=True, null=True)
-    num_items = models.PositiveIntegerField(default=0)
     num_deprecated = models.PositiveIntegerField(default=0)
     num_references = models.PositiveIntegerField(default=0)
     num_existing = models.PositiveIntegerField(default=0)
-    start = models.FloatField(blank=True, null=True)
-    duration = models.FloatField(blank=True, null=True)
-    created = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
         return 'CPE Dictionary (%s)' % self.generated
