@@ -30,9 +30,12 @@ class Dictionary(models.Model):
     Dictionary model to track updates to the database.
     """
     title = models.CharField(max_length=255)
+    dictionary_file = models.FileField(upload_to='data/cpe_dicts')
     schema_version = models.DecimalField(max_digits=4, decimal_places=2)
     product_version = models.DecimalField(max_digits=4, decimal_places=2)
     generated = models.DateTimeField()
+    last_modified = models.DateTimeField(blank=True, null=True)
+    etag = models.CharField(max_length=100, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     num_items = models.PositiveIntegerField(default=0)
     num_deprecated = models.PositiveIntegerField(default=0)

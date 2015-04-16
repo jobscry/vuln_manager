@@ -1,17 +1,22 @@
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import NoArgsCommand, CommandError
 from django.conf import settings
 from django.utils.dateparse import parse_datetime
+from django.utils.timezone import now
 from cpes.models import (
     Item, Dictionary, cpe23_wfn_to_dict,
 )
-from .utils import Updater, fast_iter
+from .utils import Updater, fast_iter, get_remote_dict
 
 from os.path import join, normpath, isfile
 from lxml import etree
 
 import time
 
-
+CPE_DICT_URL = getattr(
+    settings,
+    'CPE_DICT_URL',
+    'http://static.nvd.nist.gov/feeds/xml/cpe/dictionary/official-cpe-dictionary_v2.3.xml'
+)
 CPE_DICT = '{http://cpe.mitre.org/dictionary/2.0}'
 NAMESPACE_DICT = {
     'a': 'http://cpe.mitre.org/dictionary/2.0',
@@ -30,7 +35,7 @@ def parse_cpes(element, cpe_updater):
         cpe_title = titles[0]
 
     defaults = cpe23_wfn_to_dict(cpe23_wfn)
-    defaults['dictionary'] = cpe_updater.dictionary
+    defaults['dictionary'] = cpe_updater.update_obj
     defaults['title'] = cpe_title
     defaults['cpe22_wfn'] = cpe22_wfn
     defaults['cpe23_wfn'] = cpe23_wfn
@@ -45,59 +50,108 @@ def parse_cpes(element, cpe_updater):
             'b:deprecated-by/@name', namespaces=NAMESPACE_DICT)[0]    
         cpe.deprecation_type = deprecated.xpath(
             'b:deprecated-by/@type', namespaces=NAMESPACE_DICT)[0]
-        cpe_updater.count_deprecated += 1
+        cpe_updater.increment('num_deprecated', 1)
 
     cpe.references = element.xpath('a:references/a:reference/@href', namespaces=NAMESPACE_DICT)
 
     cpe_updater.add_item(cpe)
-    cpe_updater.increment_count()
-    cpe_updater.count_refs += len(cpe.references)
+    cpe_updater.increment('num_references', len(cpe.references))
 
 
-class Command(BaseCommand):
+class Command(NoArgsCommand):
     args = '<cpe_dict_name>'
     help = 'Updates the CPE Database'
 
     def handle(self, *args, **options):
-        path = normpath(
-            join(
-                getattr(settings, 'DJANGO_ROOT'),
-                'dicts',
-                args[0]
+
+        self.verbosity = options.get('verbosity')
+
+        current_date = now()
+        file_path = join(
+            getattr(settings, 'MEDIA_ROOT', ''),
+            'data',
+            'cpes',
+            'cpe-dict-%s.xml' % (current_date.strftime('%Y%m%d'))
+        )
+
+        try:
+            d = Dictionary.objects.latest()
+            self.stdout.write('Previous dictionary found with date: %s' % d.last_modified)
+            is_created, new_created, new_etag = get_remote_dict(
+                CPE_DICT_URL,
+                file_path,
+                d.last_modified,
+                d.etag or None,
+                self.verbosity,
+                self.stdout
             )
-        )
-        if not isfile(path):
-            raise CommandError(
-                'Dictionary does not exist: {0}'.format(
-                    args[0]))
+        except Dictionary.DoesNotExist:
+            if self.verbosity >= 2:
+                self.stdout.write('No previous dictionary found.')
+            is_created, new_created, new_etag = get_remote_dict(
+                CPE_DICT_URL,
+                file_path,
+                None,
+                None,
+                self.verbosity,
+                self.stdout
+            )
 
-        tag = CPE_DICT + 'cpe-item'
+        if is_created:
 
-        context = etree.iterparse(path, events=('end', ))
-        update = Dictionary(start=float(time.time()))
-        n = next(context)
-        update.title = n[1].text
-        n = next(context)
-        update.product_version = n[1].text
-        n = next(context)
-        update.schema_version = n[1].text
-        n = next(context)
-        update.generated = parse_datetime(
-            n[1].text
-        )
-        update.save()
+            if self.verbosity >= 1:
+                self.stdout.write('File created, parsing.')
 
-        cpe_updater = Updater(update, Item)
+            tag = CPE_DICT + 'cpe-item'
 
-        context = etree.iterparse(path, events=('end', ), tag=tag)
-        fast_iter(context, parse_cpes, cpe_updater)
+            if self.verbosity >= 2:
+                self.stdout.write('Getting metadata.')
 
-        cpe_updater.save()
+            context = etree.iterparse(file_path, events=('end', ))
+            update = Dictionary(
+                dictionary_file=file_path,
+                start=float(time.time()),
+                last_modified=new_created,
+                etag=new_etag
+            )         
 
-        update.num_items = cpe_updater.total_count
-        update.num_deprecated = cpe_updater.count_deprecated
-        update.num_references = cpe_updater.count_refs
-        update.num_existing = 0
-        end = float(time.time())
-        update.duration = end - update.start
-        update.save()
+            n = next(context)
+            update.title = n[1].text
+            n = next(context)
+            update.product_version = n[1].text
+            n = next(context)
+            update.schema_version = n[1].text
+            n = next(context)
+            update.generated = parse_datetime(
+                n[1].text
+            )
+            update.save()
+
+            cpe_updater = Updater(update, Item)
+
+            if self.verbosity >= 2:
+                self.stdout.write('Count fields are %s' % ', '.join(
+                    cpe_updater.count_fields.keys()
+                ))
+
+            if self.verbosity >= 2:
+                self.stdout.write('Parsing')
+
+            context = etree.iterparse(file_path, events=('end', ), tag=tag)
+            fast_iter(context, parse_cpes, cpe_updater)
+
+            cpe_updater.save()
+
+            if self.verbosity >= 2:
+                self.stdout.write('Done parsing.')
+
+            update.num_items = cpe_updater.total
+            update.num_deprecated = cpe_updater.get_count('num_deprecated')
+            update.num_references = cpe_updater.get_count('num_references')
+            update.num_existing = 0
+            update.duration = float(time.time()) - update.start
+            update.save()
+
+        else:
+            if self.verbosity >= 1:
+                self.stdout.write('File not created.')
