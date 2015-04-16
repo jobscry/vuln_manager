@@ -1,4 +1,4 @@
-from django.core.management.base import NoArgsCommand, CommandError
+from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
 from django.utils.dateparse import parse_datetime
 from django.utils.timezone import now
@@ -25,7 +25,59 @@ NAMESPACE_DICT = {
 }
 
 
-def parse_cpes(element, cpe_updater):
+def parse_cpes_update(element, cpe_updater):
+    
+    cpe23_wfn = element.xpath('b:cpe23-item/@name', namespaces=NAMESPACE_DICT)[0]
+
+    if Item.objects.filter(cpe23_wfn=cpe23_wfn).exists():
+        cpe_updater.increment('num_existing')
+
+        deprecated = element.xpath('b:cpe23-item/b:deprecation', namespaces=NAMESPACE_DICT)
+        if len(deprecated) == 1 and not Item.objects.filter(cpe23_wfn=cpe23_wfn, deprecated=True).exists():
+            deprecated = deprecated[0]
+            Item.objects.filter(cpe23_wfn=cpe23_wfn).update(
+                deprecated=True,
+                deprecation_date=parse_datetime(deprecated.get('date')),
+                deprecated_by=deprecated.xpath(
+                    'b:deprecated-by/@name', namespaces=NAMESPACE_DICT)[0],
+                deprecation_type=deprecated.xpath(
+                'b:deprecated-by/@type', namespaces=NAMESPACE_DICT)[0]
+            )
+            cpe_updater.increment('num_deprecated')
+
+    else:
+
+        cpe22_wfn = element.get('name')
+        titles = element.xpath("a:title[@c:lang='en-US']/text()", namespaces=NAMESPACE_DICT)
+        cpe_title = 'No title'
+        if len(titles) == 1:
+            cpe_title = titles[0]
+
+        defaults = cpe23_wfn_to_dict(cpe23_wfn)
+        defaults['dictionary'] = cpe_updater.dictionary
+        defaults['title'] = cpe_title
+        defaults['cpe22_wfn'] = cpe22_wfn
+        defaults['cpe23_wfn'] = cpe23_wfn
+        cpe = Item(**defaults)
+
+        deprecated = element.xpath('b:cpe23-item/b:deprecation', namespaces=NAMESPACE_DICT)
+        if len(deprecated) == 1:
+            deprecated = deprecated[0]
+            cpe.deprecated = True
+            cpe.deprecation_date = parse_datetime(deprecated.get('date'))
+            cpe.deprecated_by = deprecated.xpath(
+                'b:deprecated-by/@name', namespaces=NAMESPACE_DICT)[0]    
+            cpe.deprecation_type = deprecated.xpath(
+                'b:deprecated-by/@type', namespaces=NAMESPACE_DICT)[0]
+            cpe_updater.increment('num_deprecated')
+
+        cpe.references = element.xpath('a:references/a:reference/@href', namespaces=NAMESPACE_DICT)
+
+        cpe_updater.add_item(cpe)
+        cpe_updater.increment('num_references', len(cpe.references))
+
+
+def parse_cpes_full(element, cpe_updater):
     cpe22_wfn = element.get('name')
     cpe23_wfn = element.xpath('b:cpe23-item/@name', namespaces=NAMESPACE_DICT)[0]
 
@@ -58,9 +110,15 @@ def parse_cpes(element, cpe_updater):
     cpe_updater.increment('num_references', len(cpe.references))
 
 
-class Command(NoArgsCommand):
-    args = '<cpe_dict_name>'
-    help = 'Updates the CPE Database'
+class Command(BaseCommand):
+    help = 'Populates/Updates the CPE Database'
+
+    def add_arguments(self, parser):
+        parser.add_argument('--full',
+            action='store_true',
+            dest='full',
+            default=False,
+            help='Full database update?')
 
     def handle(self, *args, **options):
 
@@ -138,7 +196,14 @@ class Command(NoArgsCommand):
                 self.stdout.write('Parsing')
 
             context = etree.iterparse(file_path, events=('end', ), tag=tag)
-            fast_iter(context, parse_cpes, cpe_updater)
+            if options['full']:
+                if self.verbosity >= 2:
+                    self.stdout.write('Full database populate.')    
+                fast_iter(context, parse_cpes_full, cpe_updater)
+            else:
+                if self.verbosity >= 2:
+                    self.stdout.write('Database update only.')    
+                fast_iter(context, parse_cpes_update, cpe_updater)                
 
             cpe_updater.save()
 
