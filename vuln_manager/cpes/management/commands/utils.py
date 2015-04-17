@@ -74,13 +74,9 @@ def get_remote_dict(url, path, last_modified=None, etag=None, verbosity=0, stdou
         if verbosity >= 1:
             stdout.write('No etag or date, this will force file write.')
         headers = None
-    with closing(
-        requests.get(
-            url,
-            stream=True,
-            headers=headers
-        )
-    ) as res:
+
+    with closing(requests.get(url, stream=True, headers=headers)) as res:
+
         if res.status_code == 200:
             if verbosity >= 2:
                 stdout.write('HTTP Request status:  200')
