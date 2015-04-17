@@ -54,22 +54,16 @@ def get_remote_dict(url, path, last_modified=None, etag=None, verbosity=0, stdou
                 if verbosity >= 2:
                     stdout.write('No date, using now.')
                 headers = {
-                    'If-Modified-Since': formatdate(
-                        now().timestamp()
-                    )
+                    'If-Modified-Since': formatdate(now().timestamp())
                 }
             else:
                 headers = {
-                    'If-Modified-Since': formatdate(
-                        last_modified.timestamp()
-                    )
+                    'If-Modified-Since': formatdate(last_modified.timestamp())
                 }
         else:
             if verbosity >= 2:
                 stdout.write('Using etag.')
-            headers = {
-                'If-None-Match': etag
-            }
+            headers = {'If-None-Match': etag}
     else:
         if verbosity >= 1:
             stdout.write('No etag or date, this will force file write.')
@@ -111,6 +105,7 @@ def get_remote_dict(url, path, last_modified=None, etag=None, verbosity=0, stdou
                 with open(path, 'wb') as f:
                     for data in res.iter_content(512):
                         f.write(data)
+
             if verbosity >= 2:
                 stdout.write('Done writing.')
 
