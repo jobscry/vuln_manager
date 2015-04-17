@@ -98,10 +98,23 @@ def get_remote_dict(url, path, last_modified=None, etag=None, verbosity=0, stdou
 
             if verbosity >= 2:
                 stdout.write('Writing to new file.')
+                stdout.write('Path is ' + path)
 
-            with open(path, 'wb') as f:
-                for data in res.iter_content(512):
-                    f.write(data)
+            if '.gz' in path:
+                if verbosity >= 2:
+                    stdout.write('Writing to compressed file.')
+
+                import zlib
+                d = zlib.decompressobj(16+zlib.MAX_WBITS)
+                with open(path[:-3], 'wb') as f:
+                    for data in res.raw:
+                        f.write(
+                            d.decompress(data)
+                        )
+            else:
+                with open(path, 'wb') as f:
+                    for data in res.iter_content(512):
+                        f.write(data)
             if verbosity >= 2:
                 stdout.write('Done writing.')
 

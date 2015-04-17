@@ -1,8 +1,12 @@
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from django.conf import settings
+from django.utils.timezone import now
 from cpes.models import Item
-from cpes.management.commands.utils import fast_iter
-from cves.models import VulnerabilityDictionary, Vulnerability
+from cpes.management.commands.utils import get_remote_dict, fast_iter
+from cves.models import (
+    VulnerabilityDictionary as Dictionary,
+    Vulnerability
+)
 from .utils import (
     Updater,
     get_xpath,
@@ -10,14 +14,25 @@ from .utils import (
     get_refrences,
     FEED_SCHEMA
 )
-from os.path import join, normpath, isfile
+from os.path import join
 from lxml import etree
 
 import time
 
+FULL_CVSS_URL = getattr(
+    settings,
+    'FULL_CVSS_URL',
+    'https://nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2015.xml.gz'
+)
+MODIFIED_CVSS_URL = getattr(
+    settings,
+    'MODIFIED_CVSS_URL',
+    'https://nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-Modified.xml.gz'
+)
+
 
 def parse_cves(element, updater):
-    updater.add_items(
+    updater.add_item(
         Item.objects.filter(
             cpe22_wfn__in=get_xpath(
                 element,
@@ -70,37 +85,85 @@ def parse_cves(element, updater):
                 element,
                 'a:cvss/b:base_metrics/b:generated-on-datetime/text()'
             ),
-            dictionary=updater.dictionary
+            dictionary=updater.update_obj
         )
     )
 
 
 class Command(BaseCommand):
     args = '<cve_file_name>'
-    help = 'Updates the CVE Database'
+    help = 'Populates/Updates the CVE Database'
+
+    def add_arguments(self, parser):
+        parser.add_argument('--full',
+            action='store_true',
+            dest='full',
+            default=False,
+            help='Full database update?')
 
     def handle(self, *args, **options):
-        path = normpath(
-            join(
-                getattr(settings, 'DJANGO_ROOT'),
-                'dicts',
-                args[0]
-            )
-        )
-        if not isfile(path):
-            raise CommandError(
-                'Dictionary does not exist: {0}'.format(
-                    args[0]))
 
-        dictionary = VulnerabilityDictionary(start=float(time.time()))
-        dictionary.save()
-        updater = Updater(dictionary, Vulnerability)
+        self.verbosity = options.get('verbosity')
+
+        current_date = now()
+        file_path = join(
+            getattr(settings, 'MEDIA_ROOT', ''),
+            'data',
+            'cvss-dict-%s.xml.gz' % (current_date.strftime('%Y%m%d'))
+        )
+
+        if options['full']:
+            url = FULL_CVSS_URL
+        else:
+            url = MODIFIED_CVSS_URL
+
+        try:
+            d = Dictionary.objects.latest()
+            self.stdout.write('Previous dictionary found with date: %s' % d.last_modified)
+            is_created, new_created, new_etag = get_remote_dict(
+                url,
+                file_path,
+                d.last_modified,
+                d.etag or None,
+                self.verbosity,
+                self.stdout
+            )
+        except Dictionary.DoesNotExist:
+            if self.verbosity >= 2:
+                self.stdout.write('No previous dictionary found.')
+            is_created, new_created, new_etag = get_remote_dict(
+                url,
+                file_path,
+                None,
+                None,
+                self.verbosity,
+                self.stdout
+            )
+
+        file_path = file_path[:-3]
+        update = Dictionary.objects.create(
+            dictionary_file=file_path,
+            start=float(time.time()),
+            last_modified=new_created,
+            etag=new_etag
+        )
+        updater = Updater(update, Vulnerability)
+
+        if self.verbosity >= 2:
+            self.stdout.write('Count fields are %s' % ', '.join(
+                updater.count_fields.keys()
+            ))
+            self.stdout.write('Parsing ' + file_path)
 
         context = etree.iterparse(
-            path, events=('end', ), tag=FEED_SCHEMA + 'entry')
+            file_path, events=('end', ), tag=FEED_SCHEMA + 'entry')
         fast_iter(context, parse_cves, updater)
         updater.save()
 
-        dictionary.num_items = updater.total_count
-        dictionary.duration = float(time.time()) - dictionary.start
-        dictionary.save()
+        if self.verbosity >= 2:
+            self.stdout.write('Done parsing.')
+
+        update.num_updated = updater.total
+        update.num_not_updated = updater.get_count('num_not_updated')
+        update.duration = float(time.time()) - update.start
+        update.save()

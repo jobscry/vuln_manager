@@ -128,7 +128,6 @@ class Command(BaseCommand):
         file_path = join(
             getattr(settings, 'MEDIA_ROOT', ''),
             'data',
-            'cpes',
             'cpe-dict-%s.xml' % (current_date.strftime('%Y%m%d'))
         )
 
