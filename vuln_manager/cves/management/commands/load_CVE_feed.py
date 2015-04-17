@@ -31,7 +31,7 @@ MODIFIED_CVSS_URL = getattr(
 )
 
 
-def parse_cves(element, updater):
+def parse_cves_full(element, updater):
     updater.add_item(
         Item.objects.filter(
             cpe22_wfn__in=get_xpath(
@@ -88,6 +88,60 @@ def parse_cves(element, updater):
             dictionary=updater.update_obj
         )
     )
+
+def parse_cves_update(element, updater):
+    published = get_xpath_date(element, 'a:published-datetime/text()')
+    modified = get_xpath_date(element, 'a:last-modified-datetime/text()')
+
+    if published > updater.latest or \
+        (modified is not None and modified > updater.latest):
+
+        cve_id = element.get('id')
+
+        if Vulnerability.objects.filter(cve_id=cve_id).exists():
+            cve = Vulnerability.objects.get(cve_id=cve_id)
+
+            if modified > cve.modified:
+                cve.__dict__.update(
+                    get_vuln_item(
+                        element,
+                        cve_id,
+                        published,
+                        modified,
+                        updater
+                    )
+                )
+                cve.save()
+                cve.cpes.clear()
+                cve.cpes.add(Item.objects.filter(
+                    cpe22_wfn__in=get_xpath(
+                        element,
+                        'a:vulnerable-software-list/a:product/text()'
+                    )
+                ).values_list('pk', flat=True))
+                updater.increment('num_updated')
+            else:
+                updater.increment('num_not_updated')
+        else:
+            updater.add_items(
+                Item.objects.filter(
+                    cpe22_wfn__in=get_xpath(
+                        element,
+                        'a:vulnerable-software-list/a:product/text()'
+                    )
+                ).values_list('pk', flat=True),
+                Vulnerability(
+                    **get_vuln_item(
+                        element,
+                        cve_id,
+                        published,
+                        modified,
+                        updater
+                    )
+                )
+            )
+    else:
+        updater.increment('num_not_updated')
 
 
 class Command(BaseCommand):
@@ -157,7 +211,16 @@ class Command(BaseCommand):
 
         context = etree.iterparse(
             file_path, events=('end', ), tag=FEED_SCHEMA + 'entry')
-        fast_iter(context, parse_cves, updater)
+
+        if options['full']:
+            if self.verbosity >= 2:
+                self.stdout.write('Full database populate.')    
+            fast_iter(context, parse_cves_full, updater)
+        else:
+            if self.verbosity >= 2:
+                self.stdout.write('Database update only.')    
+            fast_iter(context, parse_cves_update, cpe_updater) 
+
         updater.save()
 
         if self.verbosity >= 2:

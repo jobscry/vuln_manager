@@ -25,6 +25,7 @@ class VulnerabilityDictionary(BaseDictionary):
     num_not_updated = models.PositiveIntegerField(default=0)
 
     class Meta:
+        get_latest_by = 'created'
         verbose_name_plural = 'Vulnerability Dictionaries'
 
 
