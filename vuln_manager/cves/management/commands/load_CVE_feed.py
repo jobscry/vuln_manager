@@ -194,39 +194,40 @@ class Command(BaseCommand):
                 self.stdout
             )
 
-        file_path = file_path[:-3]
-        update = Dictionary.objects.create(
-            dictionary_file=file_path,
-            start=float(time.time()),
-            last_modified=new_created,
-            etag=new_etag
-        )
-        updater = Updater(update, Vulnerability)
+        if is_created:
+            file_path = file_path[:-3]
+            update = Dictionary.objects.create(
+                dictionary_file=file_path,
+                start=float(time.time()),
+                last_modified=new_created,
+                etag=new_etag
+            )
+            updater = Updater(update, Vulnerability)
 
-        if self.verbosity >= 2:
-            self.stdout.write('Count fields are %s' % ', '.join(
-                updater.count_fields.keys()
-            ))
-            self.stdout.write('Parsing ' + file_path)
-
-        context = etree.iterparse(
-            file_path, events=('end', ), tag=FEED_SCHEMA + 'entry')
-
-        if options['full']:
             if self.verbosity >= 2:
-                self.stdout.write('Full database populate.')    
-            fast_iter(context, parse_cves_full, updater)
-        else:
+                self.stdout.write('Count fields are %s' % ', '.join(
+                    updater.count_fields.keys()
+                ))
+                self.stdout.write('Parsing ' + file_path)
+
+            context = etree.iterparse(
+                file_path, events=('end', ), tag=FEED_SCHEMA + 'entry')
+
+            if options['full']:
+                if self.verbosity >= 2:
+                    self.stdout.write('Full database populate.')    
+                fast_iter(context, parse_cves_full, updater)
+            else:
+                if self.verbosity >= 2:
+                    self.stdout.write('Database update only.')    
+                fast_iter(context, parse_cves_update, cpe_updater) 
+
+            updater.save()
+
             if self.verbosity >= 2:
-                self.stdout.write('Database update only.')    
-            fast_iter(context, parse_cves_update, cpe_updater) 
+                self.stdout.write('Done parsing.')
 
-        updater.save()
-
-        if self.verbosity >= 2:
-            self.stdout.write('Done parsing.')
-
-        update.num_updated = updater.total
-        update.num_not_updated = updater.get_count('num_not_updated')
-        update.duration = float(time.time()) - update.start
-        update.save()
+            update.num_updated = updater.total
+            update.num_not_updated = updater.get_count('num_not_updated')
+            update.duration = float(time.time()) - update.start
+            update.save()
