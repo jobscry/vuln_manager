@@ -12,6 +12,7 @@ from .utils import (
     get_xpath,
     get_xpath_date,
     get_refrences,
+    get_vuln_item,
     FEED_SCHEMA
 )
 from os.path import join
@@ -89,12 +90,13 @@ def parse_cves_full(element, updater):
         )
     )
 
+
 def parse_cves_update(element, updater):
     published = get_xpath_date(element, 'a:published-datetime/text()')
     modified = get_xpath_date(element, 'a:last-modified-datetime/text()')
 
     if published > updater.latest or \
-        (modified is not None and modified > updater.latest):
+            (modified is not None and modified > updater.latest):
 
         cve_id = element.get('id')
 
@@ -104,26 +106,22 @@ def parse_cves_update(element, updater):
             if modified > cve.modified:
                 cve.__dict__.update(
                     get_vuln_item(
-                        element,
-                        cve_id,
-                        published,
-                        modified,
-                        updater
+                        element, cve_id, published, modified, updater
                     )
                 )
                 cve.save()
                 cve.cpes.clear()
-                cve.cpes.add(Item.objects.filter(
-                    cpe22_wfn__in=get_xpath(
-                        element,
-                        'a:vulnerable-software-list/a:product/text()'
+                items = Item.objects.filter(
+                    cpe22_wfn=get_xpath(
+                        element, 'a:vulnerable-software-list/a:product/text()'
                     )
-                ).values_list('pk', flat=True))
+                ).values_list('pk', flat=True)
+                cve.cpes.add(*list(items))
                 updater.increment('num_updated')
             else:
                 updater.increment('num_not_updated')
         else:
-            updater.add_items(
+            updater.add_item(
                 Item.objects.filter(
                     cpe22_wfn__in=get_xpath(
                         element,
@@ -132,11 +130,7 @@ def parse_cves_update(element, updater):
                 ).values_list('pk', flat=True),
                 Vulnerability(
                     **get_vuln_item(
-                        element,
-                        cve_id,
-                        published,
-                        modified,
-                        updater
+                        element, cve_id, published, modified, updater
                     )
                 )
             )
@@ -149,7 +143,8 @@ class Command(BaseCommand):
     help = 'Populates/Updates the CVE Database'
 
     def add_arguments(self, parser):
-        parser.add_argument('--full',
+        parser.add_argument(
+            '--full',
             action='store_true',
             dest='full',
             default=False,
@@ -173,7 +168,8 @@ class Command(BaseCommand):
 
         try:
             d = Dictionary.objects.latest()
-            self.stdout.write('Previous dictionary found with date: %s' % d.last_modified)
+            self.stdout.write(
+                'Previous dictionary found with date: %s' % d.last_modified)
             is_created, new_created, new_etag = get_remote_dict(
                 url,
                 file_path,
@@ -215,12 +211,12 @@ class Command(BaseCommand):
 
             if options['full']:
                 if self.verbosity >= 2:
-                    self.stdout.write('Full database populate.')    
+                    self.stdout.write('Full database populate.')
                 fast_iter(context, parse_cves_full, updater)
             else:
                 if self.verbosity >= 2:
-                    self.stdout.write('Database update only.')    
-                fast_iter(context, parse_cves_update, cpe_updater) 
+                    self.stdout.write('Database update only.')
+                fast_iter(context, parse_cves_update, updater)
 
             updater.save()
 
