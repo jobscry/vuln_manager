@@ -98,9 +98,7 @@ def get_remote_dict(url, path, last_modified=None, etag=None, verbosity=0, stdou
                 d = zlib.decompressobj(16+zlib.MAX_WBITS)
                 with open(path[:-3], 'wb') as f:
                     for data in res.raw:
-                        f.write(
-                            d.decompress(data)
-                        )
+                        f.write(d.decompress(data))
             else:
                 with open(path, 'wb') as f:
                     for data in res.iter_content(512):
@@ -113,6 +111,7 @@ def get_remote_dict(url, path, last_modified=None, etag=None, verbosity=0, stdou
 
         if verbosity >= 1:
             stdout.write('HTTP Request status:  %s' % res.status_code)
+
         return (False, None, None)
 
 
