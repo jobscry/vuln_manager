@@ -1,9 +1,7 @@
 from django.conf import settings
-from django.shortcuts import render, render_to_response, get_object_or_404, get_list_or_404
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from core.pagination import Pages
 from cpes.models import Item
-from .models import Vulnerability
 
 
 PER_PAGE = getattr(settings, 'MAX_PER_PAGE', 100)
