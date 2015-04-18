@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.utils.dateparse import parse_datetime
 from django.utils.timezone import now, make_aware
 from contextlib import closing
 from email.utils import formatdate, parsedate
