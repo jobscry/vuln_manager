@@ -30,24 +30,23 @@ def parse_cpes_update(element, cpe_updater):
     cpe23_wfn = element.xpath(
         'b:cpe23-item/@name', namespaces=NAMESPACE_DICT)[0]
 
-    if Item.objects.filter(cpe23_wfn=cpe23_wfn).exists():
+    try:
+        item = Item.objects.get(cpe23_wfn=cpe23_wfn)
         cpe_updater.increment('num_existing')
 
         deprecated = element.xpath('b:cpe23-item/b:deprecation', namespaces=NAMESPACE_DICT)
-        if len(deprecated) == 1 and not Item.objects.filter(cpe23_wfn=cpe23_wfn, deprecated=True).exists():
-            deprecated = deprecated[0]
+        if len(deprecated) == 1 and not item.deprecated:
             Item.objects.filter(cpe23_wfn=cpe23_wfn).update(
                 deprecated=True,
-                deprecation_date=parse_datetime(deprecated.get('date')),
-                deprecated_by=deprecated.xpath(
+                deprecation_date=parse_datetime(deprecated[0].get('date')),
+                deprecated_by=deprecated[0].xpath(
                     'b:deprecated-by/@name', namespaces=NAMESPACE_DICT)[0],
-                deprecation_type=deprecated.xpath(
+                deprecation_type=deprecated[0].xpath(
                     'b:deprecated-by/@type', namespaces=NAMESPACE_DICT)[0]
             )
             cpe_updater.increment('num_deprecated')
 
-    else:
-
+    except Item.DoesNotExist:
         cpe22_wfn = element.get('name')
         titles = element.xpath(
             "a:title[@c:lang='en-US']/text()", namespaces=NAMESPACE_DICT)
@@ -65,13 +64,13 @@ def parse_cpes_update(element, cpe_updater):
         deprecated = element.xpath(
             'b:cpe23-item/b:deprecation', namespaces=NAMESPACE_DICT)
         if len(deprecated) == 1:
-            deprecated = deprecated[0]
             cpe.deprecated = True
-            cpe.deprecation_date = parse_datetime(deprecated.get('date'))
-            cpe.deprecated_by = deprecated.xpath(
+            cpe.deprecation_date = parse_datetime(deprecated[0].get('date'))
+            cpe.deprecated_by = deprecated[0].xpath(
                 'b:deprecated-by/@name', namespaces=NAMESPACE_DICT)[0]
-            cpe.deprecation_type = deprecated.xpath(
+            cpe.deprecation_type = deprecated[0].xpath(
                 'b:deprecated-by/@type', namespaces=NAMESPACE_DICT)[0]
+
             cpe_updater.increment('num_deprecated')
 
         cpe.references = element.xpath(
@@ -102,13 +101,13 @@ def parse_cpes_full(element, cpe_updater):
     deprecated = element.xpath(
         'b:cpe23-item/b:deprecation', namespaces=NAMESPACE_DICT)
     if len(deprecated) == 1:
-        deprecated = deprecated[0]
         cpe.deprecated = True
-        cpe.deprecation_date = parse_datetime(deprecated.get('date'))
-        cpe.deprecated_by = deprecated.xpath(
+        cpe.deprecation_date = parse_datetime(deprecated[0].get('date'))
+        cpe.deprecated_by = deprecated[0].xpath(
             'b:deprecated-by/@name', namespaces=NAMESPACE_DICT)[0]
-        cpe.deprecation_type = deprecated.xpath(
+        cpe.deprecation_type = deprecated[0].xpath(
             'b:deprecated-by/@type', namespaces=NAMESPACE_DICT)[0]
+
         cpe_updater.increment('num_deprecated', 1)
 
     cpe.references = element.xpath(
