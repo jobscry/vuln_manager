@@ -34,14 +34,16 @@ def get_val(request, val):
 def index(request, level='part'):
     part = None
     if level == 'part':
-        item_list = Item.objects.values('part').order_by('part').annotate(count=Count('vendor'))
+        item_list = Item.objects.values('part').order_by('part').annotate(
+            count=Count('vendor'))
         q_dict = {}
         next_level = 'vendor'
         part = None
         vendor = None
     elif level == 'vendor':
         part = get_part(request)
-        item_list = Item.objects.filter(part=part).values('vendor').order_by('vendor').annotate(count=Count('product'))
+        item_list = Item.objects.filter(part=part).values(
+            'vendor').order_by('vendor').annotate(count=Count('product'))
         q_dict = {'part': part}
         next_level = 'product'
         vendor = None
@@ -58,7 +60,6 @@ def index(request, level='part'):
             part=part, vendor=vendor).values(
                 'product').order_by('product').annotate(count=Count('id'))
         next_level = None
-
 
     paginator = Pages(item_list.all(), PER_PAGE)
     page = int(request.GET.get('page', 1))
@@ -94,6 +95,7 @@ def index(request, level='part'):
         )
     )
 
+
 def version_index(request):
     part = get_part(request)
     vendor = get_val(request, 'vendor')
@@ -122,8 +124,4 @@ def version_index(request):
                 'q_dict': q_dict
             }
         )
-    ) 
-
-
-
-
+    )
