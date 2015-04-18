@@ -128,17 +128,18 @@ class Command(BaseCommand):
         file_path = join(
             getattr(settings, 'MEDIA_ROOT', ''),
             'data',
-            'cpe-dict-%s.xml' % (current_date.strftime('%Y%m%d'))
+            'cpe-dict-%s.xml' % (current_date.strftime('%Y%m%d-%H%M'))
         )
 
         try:
             d = Dictionary.objects.latest()
-            self.stdout.write('Previous dictionary found with date: %s' % d.last_modified)
+            if self.verbosity >= 2:
+                self.stdout.write('Previous dictionary found with date: %s' % d.last_modified)
             is_created, new_created, new_etag = get_remote_dict(
                 CPE_DICT_URL,
                 file_path,
                 d.last_modified,
-                d.etag or None,
+                d.etag,
                 self.verbosity,
                 self.stdout
             )
