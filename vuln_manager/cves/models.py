@@ -1,6 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField
-from cpes.models import Item
+from cpes.models import Item, Watch
 from core.models import BaseDictionary
 from model_utils import Choices
 
@@ -126,3 +127,13 @@ class Vulnerability(models.Model):
         get_latest_by = 'modified'
         verbose_name_plural = 'vulnerabilities'
         ordering = ['-published', '-modified']
+
+
+class Alert(models.Model):
+    vulnerability = models.ForeignKey(Vulnerability)
+    watch = models.ForeignKey(Watch)
+    acks = models.ManyToManyField(User)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        get_latest_by = 'created'

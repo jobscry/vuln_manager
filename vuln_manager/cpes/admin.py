@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Item, Dictionary, cpe23_wfn_to_dict
+from .models import Item, Dictionary, Watch
 
 
 class ItemAdmin(admin.ModelAdmin):
@@ -27,3 +27,20 @@ class DictionaryAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(Dictionary, DictionaryAdmin)
+
+
+class WatchAdmin(admin.ModelAdmin):
+    list_display = (
+        'part',
+        'vendor',
+        'product',
+        'version'
+    )
+    list_filter = [
+        'part',
+        'vendor',
+        'product',
+        'version'
+    ]
+
+admin.site.register(Watch, WatchAdmin)

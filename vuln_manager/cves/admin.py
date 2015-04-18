@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import VulnerabilityDictionary, Vulnerability
+from .models import (
+    VulnerabilityDictionary,
+    Vulnerability,
+    Alert
+)
 
 
 class VulnerabilityDictionaryAdmin(admin.ModelAdmin):
@@ -28,3 +32,13 @@ class VulnerabilityAdmin(admin.ModelAdmin):
     ]
 
 admin.site.register(Vulnerability, VulnerabilityAdmin)
+
+
+class AlertAdmin(admin.ModelAdmin):
+    list_display = (
+        'watch',
+        'created'
+    )
+    date_hierarchy = 'created'
+
+admin.site.register(Alert, AlertAdmin)

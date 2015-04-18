@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField
 from django.utils.http import urlquote
 from model_utils import Choices
@@ -37,7 +38,6 @@ class Dictionary(BaseDictionary):
     num_deprecated = models.PositiveIntegerField(default=0)
     num_references = models.PositiveIntegerField(default=0)
     num_existing = models.PositiveIntegerField(default=0)
-
 
     def __str__(self):
         return 'CPE Dictionary (%s)' % self.generated
@@ -103,3 +103,29 @@ class Item(models.Model):
 
     def __str__(self):
         return self.cpe23_wfn
+
+
+class Watch(models.Model):
+    part = models.CharField(
+        max_length=1,
+        choices=Item.PART_CHOICES,
+        default=APPLICATIONS,
+        db_index=True
+    )
+    vendor = models.CharField(max_length=255, db_index=True)
+    product = models.CharField(max_length=255, db_index=True)
+    version = models.CharField(max_length=255, db_index=True)
+    users = models.ManyToManyField(User)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return '[{0}:{1}:{2}:{3}:*:*:*:*:*:*]'.format(
+            self.part,
+            self.vendor,
+            self.product,
+            self.version
+        )
+
+    class Meta:
+        verbose_name_plural = 'watches'
+
