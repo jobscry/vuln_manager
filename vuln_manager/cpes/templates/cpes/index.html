@@ -34,9 +34,9 @@
 <p>
 {% for item in objects %}
     {% if not next_level %}
-    <a href="{% url 'cpes:version_index' %}{{ q_dict|qstring|safe }}product={{ item.url }}">{{ item.obj }}</a>
+    <a class="obj" href="{% url 'cpes:version_index' %}{{ q_dict|qstring|safe }}product={{ item.url }}">{{ item.obj }}</a>
     {% else %}
-    <a href="{% url 'cpes:part_index' next_level %}{{ q_dict|qstring|safe }}{{ level }}={{ item.url }}">{{ item.obj }}</a>
+    <a class="obj" href="{% url 'cpes:part_index' next_level %}{{ q_dict|qstring|safe }}{{ level }}={{ item.url }}">{{ item.obj }}</a>
     {% endif %}
     <small>{{ item.count }}</small>{% if not forloop.last %}, {% endif %}
 {% endfor %}
