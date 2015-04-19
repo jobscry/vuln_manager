@@ -1,12 +1,20 @@
 from django.db.models import Count
 from django.core.paginator import EmptyPage, PageNotAnInteger
+from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.http import Http404
-from django.shortcuts import render_to_response, get_list_or_404
+from django.shortcuts import (
+    redirect,
+    render_to_response,
+    get_list_or_404,
+    get_object_or_404
+)
 from django.template import RequestContext
 from django.utils.http import urlquote, urlunquote
 from core.pagination import Pages
-from .models import Item
+from .models import Item, Watch
 
 import re
 
@@ -112,6 +120,11 @@ def version_index(request):
         'part': part, 'vendor': vendor, 'product': product
     }
 
+    can_watch = request.user.is_authenticated()
+    has_watch = None
+    if can_watch:
+        has_watch = Watch.objects.filter(**q_dict).filter(
+            users=request.user).exists()
     return render_to_response(
         'cpes/version_index.html',
         RequestContext(
@@ -121,7 +134,45 @@ def version_index(request):
                 'vendor': vendor,
                 'product': product,
                 'objects': objects,
-                'q_dict': q_dict
+                'q_dict': q_dict,
+                'can_watch': can_watch,
+                'has_watch': has_watch
             }
+        )
+    )
+
+
+@login_required
+def watch_toggle(request):
+    part = get_part(request)
+    vendor = get_val(request, 'vendor')
+    product = get_val(request, 'product')
+
+    if part is None or vendor is None or product is None:
+        raise Http404('No product found.')
+
+    w, created = Watch.objects.get_or_create(
+        part=part,
+        vendor=vendor,
+        product=product
+    )
+
+    if created:
+        w.users.add(request.user)
+        messages.success(request, 'Watch created')
+    else:
+        if w.users.filter(pk=request.user.pk).exists():
+            w.users.remove(request.user)
+            messages.warning(request, 'Watch removed')
+        else:
+            w.users.add(request.user)
+            messages.success(request, 'Watch created')
+
+    return redirect(
+        '{0}?part={1}&vendor={2}&product={3}'.format(
+            reverse('cpes:version_index'),
+            urlquote(part),
+            urlquote(vendor),
+            urlquote(product)
         )
     )

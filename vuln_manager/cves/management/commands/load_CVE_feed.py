@@ -5,7 +5,8 @@ from cpes.models import Item
 from cpes.management.commands.utils import get_remote_dict, fast_iter
 from cves.models import (
     VulnerabilityDictionary as Dictionary,
-    Vulnerability
+    Vulnerability,
+    Alert
 )
 from .utils import (
     Updater,
@@ -100,7 +101,7 @@ def parse_cves_update(element, updater):
 
         cve_id = element.get('id')
 
-        if Vulnerability.objects.filter(cve_id=cve_id).exists():
+        try:
             cve = Vulnerability.objects.get(cve_id=cve_id)
 
             if modified > cve.modified:
@@ -120,7 +121,8 @@ def parse_cves_update(element, updater):
                 updater.increment('num_updated')
             else:
                 updater.increment('num_not_updated')
-        else:
+
+        except Vulnerability.DoesNotExist:
             updater.add_item(
                 Item.objects.filter(
                     cpe22_wfn__in=get_xpath(
@@ -223,7 +225,8 @@ class Command(BaseCommand):
             if self.verbosity >= 2:
                 self.stdout.write('Done parsing.')
 
-            update.num_updated = updater.total
+            update.num_updated = updater.get_count('num_updated')
+            update.num_items = updater.total
             update.num_not_updated = updater.get_count('num_not_updated')
             update.duration = float(time.time()) - update.start
             update.save()

@@ -34,13 +34,11 @@ class WatchAdmin(admin.ModelAdmin):
         'part',
         'vendor',
         'product',
-        'version'
     )
     list_filter = [
         'part',
         'vendor',
         'product',
-        'version'
     ]
 
 admin.site.register(Watch, WatchAdmin)

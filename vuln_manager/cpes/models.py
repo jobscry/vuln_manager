@@ -114,18 +114,26 @@ class Watch(models.Model):
     )
     vendor = models.CharField(max_length=255, db_index=True)
     product = models.CharField(max_length=255, db_index=True)
-    version = models.CharField(max_length=255, db_index=True)
     users = models.ManyToManyField(User)
     created = models.DateTimeField(auto_now_add=True)
 
+    @staticmethod
+    def from_cpe(cpe):
+        try:
+            return Watch.objects.get(
+                part=cpe.part,
+                vendor=cpe.vendor,
+                product=cpe.product,
+            )
+        except Watch.DoesNotExist:
+            return None
+
     def __str__(self):
-        return '[{0}:{1}:{2}:{3}:*:*:*:*:*:*]'.format(
+        return '[{0}:{1}:{2}:*:*:*:*:*:*:*]'.format(
             self.part,
             self.vendor,
             self.product,
-            self.version
         )
 
     class Meta:
         verbose_name_plural = 'watches'
-

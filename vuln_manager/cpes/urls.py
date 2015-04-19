@@ -13,6 +13,11 @@ urlpatterns = [
         name='version_index'
     ),
     url(
+        r'watch-toggle/$',
+        views.watch_toggle,
+        name='watch_toggle'
+    ),
+    url(
         r'^$',
         views.index,
         name='index'

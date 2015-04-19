@@ -24,6 +24,7 @@ NVD_URL = 'https://web.nvd.nist.gov/view/vuln/detail?vulnId='
 class VulnerabilityDictionary(BaseDictionary):
     num_updated = models.PositiveIntegerField(default=0)
     num_not_updated = models.PositiveIntegerField(default=0)
+    processed_alerts = models.BooleanField(default=False)
 
     class Meta:
         get_latest_by = 'created'
@@ -137,3 +138,5 @@ class Alert(models.Model):
 
     class Meta:
         get_latest_by = 'created'
+        unique_together = ('vulnerability', 'watch')
+

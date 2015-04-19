@@ -36,7 +36,7 @@ def parse_cpes_update(element, cpe_updater):
 
         deprecated = element.xpath('b:cpe23-item/b:deprecation', namespaces=NAMESPACE_DICT)
         if len(deprecated) == 1 and not item.deprecated:
-            Item.objects.filter(cpe23_wfn=cpe23_wfn).update(
+            Item.objects.filter(pk=item.pk).update(
                 deprecated=True,
                 deprecation_date=parse_datetime(deprecated[0].get('date')),
                 deprecated_by=deprecated[0].xpath(

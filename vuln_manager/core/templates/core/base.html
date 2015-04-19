@@ -47,6 +47,20 @@
                     </ol>
                 </div>
             </div>
+{% if messages %}
+    {% for message in messages  %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="alert alert-{{ message.tags }}">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>{{ message.tags|title }}</strong> {{ message }}
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+{% endif %}
             {% block content %}{% endblock content %}
         </div>
 
