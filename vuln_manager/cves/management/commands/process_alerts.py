@@ -59,6 +59,6 @@ class Command(BaseCommand):
             d.processed_alerts = True
             d.save()
 
-        except IndexError:
+        except Dictionary.DoesNotExist:
             if self.verbosity >= 1:
                 self.stdout.write('No unprocessed dictionaries found.')
