@@ -217,6 +217,8 @@ DJANGO_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
+    'registration',
+    'bootstrapform',
     'core',
     'cpes',
     'cves',
@@ -258,6 +260,13 @@ LOGGING = {
     }
 }
 ########## END LOGGING CONFIGURATION
+
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = False
+REGISTRATION_OPEN = True
+INCLUDE_AUTH_URLS = True
+INCLUDE_REGISTER_URL = True
+LOGIN_REDIRECT_URL = 'cpes:index'
 
 
 ########## WSGI CONFIGURATION

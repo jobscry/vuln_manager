@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+
+{% load bootstrap %}
+
+{% block page_title %}Login{% endblock page_title %}
+
+{% block content %}
+    <h2>Login</h2>
+    <form method="post" action="{% url 'auth_login' %}" role="form">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </form>
+{% endblock content %}

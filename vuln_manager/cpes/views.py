@@ -14,6 +14,7 @@ from django.shortcuts import (
 from django.template import RequestContext
 from django.utils.http import urlquote, urlunquote
 from core.pagination import Pages
+from cves.models import Alert
 from .models import Item, Watch
 
 import re

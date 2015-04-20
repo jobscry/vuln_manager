@@ -15,16 +15,22 @@ class Command(BaseCommand):
         parser.add_argument(
             '--force',
             action='store_true',
-            dest='full',
+            dest='force',
             default=False,
-            help='Force re')
+            help='Force reprocessing of alerts.')
 
     def handle(self, *args, **options):
 
         self.verbosity = options.get('verbosity')
+        self.force = options.get('force')
+
+        self.stdout.write('Force is {0}'.format(self.force))
 
         try:
-            d = Dictionary.objects.filter(processed_alerts=False).latest()
+            if self.force:
+                d = Dictionary.objects.latest()
+            else:    
+                d = Dictionary.objects.filter(processed_alerts=False).latest()
 
             if self.verbosity >= 3:
                 self.stdout.write('Found unprocessed dictionary created on {0}'.format(d.created))

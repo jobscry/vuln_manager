@@ -1,7 +1,11 @@
 from django.conf import settings
-from django.shortcuts import render_to_response, get_object_or_404
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
+from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
-from cpes.models import Item
+from cpes.models import Item, Watch
+from .models import Alert
 
 
 PER_PAGE = getattr(settings, 'MAX_PER_PAGE', 100)
@@ -26,4 +30,35 @@ def by_cpe(request, cpe_id):
                 }
             }
         )
+    )
+
+
+@login_required
+def alerts(request):
+    watch_pks = list(
+        Watch.objects.filter(users=request.user).values_list('pk', flat=True)
+    )
+    alerts = Alert.objects.select_related(
+        'vulnerability', 'watch').filter(vulnerability__pk__in=watch_pks)
+    acks = list(alerts.filter(acks=request.user).values_list('pk', flat=True))
+
+    return render_to_response(
+        'cves/alerts_index.html',
+        RequestContext(
+            request,
+            {
+                'alerts': alerts,
+                'acks': acks
+            }
+        )
+    )
+
+
+@login_required
+def acknowledge_alert(request, alert_pk):
+    alert = get_object_or_404(Alert, pk=alert_pk)
+    alert.acks.add(request.user)
+    messages.success(request, 'Alert acknowledged.')
+    return redirect(
+        reverse('cves:alerts')
     )

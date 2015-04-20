@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% block page_title %}Alerts{% endblock page_title %}
+
+{% block content %}
+    <h2>Alerts</h2>
+    <ul>
+{% for alert in alerts  %}
+    <li>
+    {% if alert.pk not in acks %}
+        <strong>
+            <a href="{% url 'cves:ack' alert.pk %}">New</a>
+        </strong> - 
+    {% endif %}
+        <a href="{{ alert.vulnerability.nvd_url }}">{{ alert.vulnerability }}</a> on {{ alert.watch }}
+    </li>
+{% empty %}
+        <li>No alerts.</li>
+{% endfor %}
+    </ul>
+{% endblock content %}
