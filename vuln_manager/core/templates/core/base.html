@@ -32,7 +32,10 @@
                         </li>
 {% if user.is_authenticated %}
                         <li>
-                            <a href="{% url 'cves:alerts' %}">Alerts</a>
+                            <a href="{% url 'cves:alerts' %}">
+                                {{ new_alert_count }} 
+                                Alert{{ new_alert_count|pluralize }}
+                            </a>
                         </li>
                         <li><a href="{% url 'auth_logout' %}">Logout</a></li>
 {% else %}
