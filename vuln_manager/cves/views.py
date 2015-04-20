@@ -39,7 +39,7 @@ def alerts(request):
         Watch.objects.filter(users=request.user).values_list('pk', flat=True)
     )
     alerts = Alert.objects.select_related(
-        'vulnerability', 'watch').filter(vulnerability__pk__in=watch_pks)
+        'vulnerability', 'watch').filter(watch__pk__in=watch_pks)
     acks = list(alerts.filter(acks=request.user).values_list('pk', flat=True))
 
     return render_to_response(
